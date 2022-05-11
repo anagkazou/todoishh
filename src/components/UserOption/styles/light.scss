@@ -1,0 +1,23 @@
+.light .user-options {
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 #00000014;
+  border-color: #e6e6e6;
+  color: inherit;
+  &__item {
+    &:first-child {
+      border-color: #e6e6e6;
+    }
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+
+  .user-info {
+    &__name {
+      color: inherit;
+    }
+    &__email {
+      color: #9b9b9b;
+    }
+  }
+}

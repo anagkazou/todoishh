@@ -1,0 +1,218 @@
+@import "scss/mixins.scss";
+.add-project {
+  border-radius: 5px;
+  &__modal {
+    border-radius: 5px;
+    width: 400px;
+    background-color: #202020;
+    box-shadow: 0 2px 8px 0 #00000029;
+    align-self: center;
+    @include respond(phone) {
+      top: 8%;
+      width: 92%;
+      position: inherit;
+    }
+    &--header {
+      padding: 20px 24px;
+      border-bottom: 1px solid #ffffff1a;
+      h4 {
+        margin: unset;
+        font-size: 16px;
+      }
+    }
+
+    &--content {
+      padding: 20px 24px;
+      background-color: #282828;
+      height: 40vh;
+      overflow-y: scroll;
+    }
+
+    &--footer {
+      padding: 20px 24px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top: 1px solid #ffffff1a;
+      border-bottom: unset;
+    }
+
+    &--buttons {
+      display: flex;
+      justify-content: end;
+
+      .btn__add-project,
+      .btn__cancel {
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        color: #fefbfb;
+      }
+      .btn__add-project {
+        background-color: tomato;
+      }
+      .btn__cancel {
+        margin-right: 0.4rem;
+        background-color: #353535;
+        transition-property: box-shadow, border;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+      }
+    }
+  }
+
+  &__form-group {
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__project-name,
+  &__select-color {
+    width: -webkit-fill-available;
+    color: #eee;
+    border: 1px solid #333;
+    background-color: #202020;
+    padding: 0.4rem;
+    position: relative;
+    border-radius: 5px;
+  }
+  &__select-color {
+    display: flex;
+    align-items: center;
+  }
+  &__selected-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 0.4rem;
+
+    &--option {
+    }
+  }
+  &__set-selected-color {
+    position: absolute;
+    height: 200px;
+    overflow-y: scroll;
+    background-color: #282828;
+    width: inherit;
+    padding: 1rem 0.4rem;
+    top: 2rem;
+    left: 0;
+    border-radius: 5px;
+  }
+}
+
+.add-project__colour-dropdown {
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  border: 1px solid #171717;
+  &--option {
+    display: flex;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 0.2rem;
+    }
+
+    &-color {
+      margin-right: 0.4rem;
+      width: 12px;
+      height: 12px;
+    }
+    &-name {
+    }
+  }
+}
+
+.add-project__set-view-type {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  &--option {
+    width: 50%;
+    flex: 0;
+    cursor: pointer;
+  }
+
+  &--description {
+    display: flex;
+    align-items: center;
+  }
+  &--radio {
+    border: 1px solid grey;
+    /* padding: 0.2rem; */
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 0.4rem;
+    & svg {
+      opacity: 0;
+      .selected & {
+        opacity: 1;
+        stroke: white;
+      }
+    }
+  }
+
+  &--preview {
+    border: 1px solid #ffffff1a;
+    background-position: 5px 5px;
+    width: 160px;
+    height: 120px;
+    margin-bottom: 8px;
+    border: 1px solid #ffffff1a;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+    @include respond(phone) {
+      width: 34vw;
+      height: 25vw;
+    }
+  }
+
+  .selected.add-project__set-view-type--option {
+    .add-project__set-view-type--preview {
+      border-color: tomato;
+    }
+    .add-project__set-view-type--description > .add-project__set-view-type--radio {
+      background-color: tomato;
+      border: 2px solid tomato;
+      color: #fefbfb;
+    }
+  }
+}
+
+.preview__list {
+  background-image: url("../../../../assets/svg/1.svg");
+
+  &:hover {
+    background-image: url("../../../../assets/svg/list-hover.svg") !important;
+  }
+}
+.preview__board {
+  background-image: url("../../../../assets/svg/2.svg");
+  &:hover {
+    background-image: url("../../../../assets/svg/board-hover.svg") !important;
+  }
+
+  @include respond(phone) {
+    .preview__board,
+    .preview__list :hover {
+      all: unset;
+    }
+  }
+}
+
+.preview__list,
+.preview__board {
+  background-size: contain;
+}

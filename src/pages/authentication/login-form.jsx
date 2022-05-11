@@ -1,0 +1,104 @@
+import { useState } from "react";
+import { FeatherIcons } from "assets/svg/feather-icons";
+
+import { ReactComponent as EyeOn } from "assets/svg/eye-on.svg";
+import { ReactComponent as EyeOff } from "assets/svg/eye-off.svg";
+import { Link } from "react-router-dom";
+import { useAuth } from "hooks";
+export const LoginForm = () => {
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [emailIsValid, setEmailIsValid] = useState(true);
+  const [showDefaultErrorMessage, setShowDefaultErrorMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [authenticating, setAuthenticating] = useState(false);
+  const { signinWithEmail } = useAuth();
+
+  const onChangeHandler = (event) => {
+    event.preventDefault();
+    setEmailIsValid(true);
+    setShowDefaultErrorMessage(false);
+
+    const value = event.target.value;
+    setFormState({
+      ...formState,
+      [event.target.name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { email, password } = formState;
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (emailRegex.test(email)) {
+      setEmailIsValid(true);
+    } else {
+      setErrorMessage("You entered an invalid email");
+      setEmailIsValid(false);
+      return;
+    }
+
+    if (emailIsValid) {
+      signinWithEmail(email, password).catch((error) => {
+        if (error.code == "auth/wrong-password") {
+          setErrorMessage("Wrong email or password");
+          setShowDefaultErrorMessage(true);
+        }
+      });
+    }
+  };
+
+  return (
+    <>
+      <div className="error-block">
+        {showDefaultErrorMessage && (
+          <div className="error-message">
+            <FeatherIcons id="alert-circle" width={20} height={20} fill="#db4c3f" stroke={"#fff"} strokeWidth={2} currentColor={"#fff"} />
+            {errorMessage}
+          </div>
+        )}
+        {!emailIsValid && (
+          <div className="error-message">
+            <FeatherIcons id="alert-circle" width={20} height={20} fill="#db4c3f" stroke={"#fff"} strokeWidth={2} currentColor={"#fff"} />
+            {errorMessage}
+          </div>
+        )}
+      </div>
+      <form className="login-form">
+        <div className="field">
+          <label htmlFor="email" className="label">
+            Email
+          </label>
+          <input type="email" name="email" id="email" value={formState.email} onChange={(e) => onChangeHandler(e)} />
+        </div>
+        <div className="field">
+          <label className="label" htmlFor="password">
+            Password
+          </label>
+          <div className="toggle_password">
+            <input
+              className="form_field_control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder=""
+              value={formState.password}
+              onChange={(e) => onChangeHandler(e)}
+            />
+            <span className="toggle" role="checkbox" tabIndex="0" aria-checked="false">
+              <EyeOn />
+            </span>
+          </div>
+        </div>
+        <button className="auth-button submit-button" onClick={(e) => handleSubmit(e)}>
+          Log in
+        </button>
+
+        <hr />
+
+        <p>
+          Dont have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+      </form>
+    </>
+  );
+};

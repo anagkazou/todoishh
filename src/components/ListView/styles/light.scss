@@ -1,0 +1,45 @@
+.light .task {
+  background-color: transparent;
+  box-shadow: unset;
+  border-color: #0000001f;
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .task__text {
+    color: inherit;
+  }
+
+  &__project-info {
+    color: #555;
+  }
+}
+
+.light .empty-state {
+  &__header {
+    color: #202020;
+  }
+
+  &__body {
+    color: #777;
+  }
+}
+
+.light {
+  .date__today {
+    color: #058527;
+  }
+  .date__tomorrow {
+    color: #ad6200;
+  }
+
+  .date__next-week {
+    color: #692fc2;
+  }
+  .date__weekend {
+    color: #246fe0;
+  }
+
+  .date__overdue {
+    color: #dd4b39;
+  }
+}

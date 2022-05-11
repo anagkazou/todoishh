@@ -1,0 +1,135 @@
+@import "scss/mixins.scss";
+.task {
+  position: relative;
+  min-height: 2.4rem;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem 0;
+  align-items: center;
+  border-bottom: 1px solid #ffffff1a;
+  &:first-of-type {
+    border-top: 1px solid #ffffff1a;
+  }
+  &:hover {
+    border-color: #ffffff33;
+    .menu__trigger {
+      opacity: 1;
+    }
+  }
+
+  @include respond(tab-port) {
+  }
+  &-list__wrapper {
+    padding-left: 55px;
+    padding-right: 55px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &__checkbox {
+    width: 16px;
+    border: grey 1px solid;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin-right: 0.6rem;
+    cursor: pointer;
+    &--icon {
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__details {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    color: #fefbfb;
+    margin-bottom: 4px;
+  }
+
+  &__date {
+    font-size: 12px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    color: #ffffff99;
+    svg {
+      margin-right: 2px;
+    }
+  }
+
+  &__project-info {
+    display: flex;
+    font-size: 12px;
+    color: #ffffff99;
+    align-items: center;
+  }
+}
+.empty-state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__illustration {
+    width: 220px;
+    height: 200px;
+  }
+
+  &__header {
+    font-size: 16px;
+    color: #ffffffde;
+    margin: 8px 0;
+  }
+
+  &__body {
+    color: #ffffff99;
+    font-weight: 100;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    background-color: #de4c4a;
+    //dark theme
+    color: hsla(0, 0%, 100%, 0.87);
+    display: block;
+    font-size: 13px;
+    line-height: 17px;
+    margin: 20px auto 0;
+    padding: 6px 12px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.date__today {
+  color: #25b84c !important;
+}
+.date__tomorrow {
+  color: #ff9a14 !important;
+}
+.date__overdue {
+  color: #ff7066 !important;
+}
+.date__next-week {
+  color: #a970ff;
+}
+.date__weekend {
+  color: #5297ff;
+}

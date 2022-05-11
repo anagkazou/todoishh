@@ -1,0 +1,108 @@
+<svg
+    width="155"
+    height="115"
+    viewBox="0 0 155 115"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <defs><path id="board_pressed_light_path" d="M0 0h160v120H0z" /></defs>
+    <g transform="translate(-5 -5)" fill="none" fill-rule="evenodd">
+        <mask id="board_pressed_light_mask" fill="#fff">
+            <use xlink:href="#board_pressed_light_path" />
+        </mask>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(6 6)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".24"
+                    fill="#000"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(6 42)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".24"
+                    fill="#000"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(76 42)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".24"
+                    fill="#000"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(76 78)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".24"
+                    fill="#000"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(76 114)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect fill="#EBEBEB" x="26" y="10" width="30" height="10" rx="5" />
+                <circle stroke-opacity=".4" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(76 6)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".24"
+                    fill="#000"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_pressed_light_mask)">
+            <g transform="translate(146 6)">
+                <rect stroke-opacity=".56" stroke="#000" width="64" height="30" rx="4" />
+                <rect fill="#EBEBEB" x="26" y="10" width="30" height="10" rx="5" />
+                <circle stroke-opacity=".56" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+    </g>
+</svg>

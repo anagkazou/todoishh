@@ -1,0 +1,108 @@
+<svg
+    width="155"
+    height="115"
+    viewBox="0 0 155 115"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <defs><path id="board_preview_dark_path" d="M0 0h160v120H0z" /></defs>
+    <g transform="translate(-5 -5)" fill="none" fill-rule="evenodd">
+        <mask id="board_preview_dark_mask" fill="#fff">
+            <use xlink:href="#board_preview_dark_path" />
+        </mask>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(6 6)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".16"
+                    fill="#FFF"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(6 42)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".16"
+                    fill="#FFF"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(76 42)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".16"
+                    fill="#FFF"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(76 78)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".16"
+                    fill="#FFF"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(76 114)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect fill="#EBEBEB" x="26" y="10" width="30" height="10" rx="5" />
+                <circle stroke-opacity=".4" stroke="#000" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(76 6)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect
+                    fill-opacity=".16"
+                    fill="#FFF"
+                    fill-rule="nonzero"
+                    x="26"
+                    y="10"
+                    width="30"
+                    height="10"
+                    rx="5"
+                />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+        <g mask="url(#board_preview_dark_mask)">
+            <g transform="translate(146 6)">
+                <rect stroke-opacity=".4" stroke="#FFF" width="64" height="30" rx="4" />
+                <rect fill="#EBEBEB" x="26" y="10" width="30" height="10" rx="5" />
+                <circle stroke-opacity=".4" stroke="#FFF" cx="13" cy="15" r="5" />
+            </g>
+        </g>
+    </g>
+</svg>

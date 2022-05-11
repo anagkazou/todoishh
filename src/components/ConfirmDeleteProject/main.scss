@@ -1,0 +1,54 @@
+@import "scss/mixins.scss";
+
+.confirm-delete {
+  background-color: #1f1f1f;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  max-height: calc(100vh -2 * 13vh);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 #00000029;
+  transition: width 0.2s ease-in-out;
+  max-width: 100%;
+
+  @include respond(phone) {
+width: 80vw;  }
+  header {
+    padding: 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      color: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(2) {
+        svg {
+          transform: rotate(45deg);
+        }
+      }
+      &:hover {
+        background-color: #363636;
+      }
+    }
+  }
+
+  &__content {
+    padding: 8px 16px 32px 16px;
+  }
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+
+    button:first-of-type {
+      margin-right: 1rem;
+    }
+  }
+}

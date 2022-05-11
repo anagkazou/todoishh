@@ -1,0 +1,43 @@
+@import "scss/mixins.scss";
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 340;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  background-color: rgba(0, 0, 0, 0.64);
+}
+
+// &__set-selected-type {
+//
+//
+.quick-add-task__wrapper {
+  width: 550px;
+  background-color: #202020;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #00000014, 0 15px 50px 0 #00000099;
+  & > .add-task__wrapper > form {
+    margin-top: 0;
+  }
+  @include respond(tab-port) {
+    position: inherit;
+    width: 95%;
+  }
+}
+
+.quick-add__actions {
+  margin-top: 0;
+  padding: 0.8rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #363636;
+}
+.quick-add__container {
+  margin-bottom: 0;
+  border-bottom: 0;
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+}

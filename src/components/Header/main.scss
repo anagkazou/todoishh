@@ -1,0 +1,46 @@
+@import "scss/mixins.scss";
+.header {
+  position: fixed;
+  width: -webkit-fill-available;
+  z-index: 310;
+  top: 0;
+  padding: 0 42px;
+  box-shadow: 0 1px 3px 0 #00000026;
+  background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.489);
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    & * {
+      display: block;
+      svg {
+        stroke: #ffffde;
+
+      }
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: 0 12px;
+  }
+}
+
+.avatar__img {
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.quick-add-task_dark {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+}

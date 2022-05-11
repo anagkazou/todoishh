@@ -1,0 +1,17 @@
+.light .menu__list {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 8px 0 #00000014;
+
+  
+}
+.light .menu__list--item {
+    &:hover {
+      background-color: #f3f3f3 !important;
+      color: inherit !important;
+    }
+    &:first-of-type {
+        border-bottom: 1px solid #ddd;
+      }
+  }

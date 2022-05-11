@@ -1,0 +1,33 @@
+.menu__trigger {
+  position: absolute;
+  right: -2.4rem;
+  display: flex;
+  border-radius: 2px;
+  padding: 2px;
+  opacity: 0;
+  background-color: inherit;
+  cursor: pointer;
+
+  svg {
+    stroke: grey;
+  }
+
+  &:hover {
+    background-color: #363636;
+
+    svg {
+      stroke: #ffffffde;
+    }
+  }
+
+  
+}
+
+.menu__trigger--header {
+  position: unset;
+  opacity: 1;
+
+  &:hover {
+    background-color: #4d4d4d;
+  }
+}

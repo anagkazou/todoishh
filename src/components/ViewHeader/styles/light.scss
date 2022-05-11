@@ -1,0 +1,25 @@
+.light .content {
+  background-color: #fff;
+}
+
+.light .view-header__board,
+.light .view-header__list {
+  background-color: #fff;
+}
+
+.light .view-header__action {
+  color: grey;
+
+  &:hover {
+    background-color: #eee;
+    color: #202020;
+
+    svg {
+      stroke: #202020;
+    }
+  }
+
+  svg {
+    stroke: grey;
+  }
+}

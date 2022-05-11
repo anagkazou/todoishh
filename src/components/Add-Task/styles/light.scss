@@ -1,0 +1,42 @@
+.light .add-task__container {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.light .add-task__input,
+.light .add-task__description {
+  color: #202020;
+  &::placeholder {
+    color: #ada699;
+  }
+}
+
+.light .set-new-task__project,
+.light .set-new-task__schedule {
+  border-color: #ccc;
+}
+.light .add-task__actions--cancel {
+  color: #000000e0;
+  background-color: transparent;
+  border-color: #d6d6d6;
+
+  &:hover {
+    background-color: #ebebeb;
+    border-color: #bdbdbd;
+  }
+}
+
+.light .quick-add__actions {
+  background-color: #fff;
+  border-color: #ddd;
+}
+.light .quick-add-task__wrapper {
+  box-shadow: 0 15px 50px 0 #00000059;
+  background-color: #fff;
+}
+.light {
+  .set-new-task__schedule,
+  .set-new-task__project {
+    color: #555;
+  }
+}

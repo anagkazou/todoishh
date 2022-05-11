@@ -1,0 +1,12 @@
+.light .set-schedule__popper,
+.light .set-project__popper {
+  background-color: #fff;
+  box-shadow: 0 1px 8px 0 #00000014, 0 0 1px 0 #0000004d;
+  border-radius: 1px solid #ddd;
+
+  &--option {
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+}

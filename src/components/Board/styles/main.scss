@@ -1,0 +1,64 @@
+@import "scss/mixins.scss";
+
+.board {
+  &__wrapper {
+    margin-left: 47px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 4rem;
+  }
+
+  &-column {
+    &__title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    &__container {
+      min-width: 250px;
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+
+      .tasklist {
+        min-height: 1px;
+      }
+    }
+  }
+
+  &-task {
+    padding: 12px;
+    display: flex;
+
+    background-color: #282828;
+    width: -webkit-fill-available;
+    margin-bottom: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ffffff1a;
+    box-shadow: 0 10px 10px #0000001a, 0 6px 3px #0000001f;
+    position: relative;
+    align-items: center;
+    & .menu__trigger {
+      right: 0.6rem;
+    }
+    &:hover {
+      border-color: #ffffff33;
+
+      & .menu__trigger {
+        opacity: 1;
+      }
+    }
+    @include respond(phone) {
+      & .menu__trigger {
+        opacity: 1;
+      }
+    }
+    &__info {
+      margin-top: 8px;
+    }
+    .task__checkbox {
+      align-self: flex-start;
+    }
+  }
+}

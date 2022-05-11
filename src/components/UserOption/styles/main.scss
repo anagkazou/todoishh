@@ -1,0 +1,42 @@
+.user-options {
+  position: absolute;
+  z-index: 30001;
+  background-color: #282828;
+  padding: 2px 3px;
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  border: 1px solid #ffffff1a;
+  border-radius: 5px;
+  font-size: 12px;
+  &__item {
+    padding: 0.4rem 3px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    &:first-child {
+      border-bottom: 1px solid #ffffff1a;
+      border-radius: unset;
+    }
+    &:hover {
+      background-color: #363636;
+    }
+  }
+  &__icon {
+    margin-right: 0.4rem;
+  }
+}
+.user-info {
+  display: flex;
+  &__img {
+    margin-right: 6px;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
+
+  &__name {
+    color: #ffffffde;
+  }
+  &__email {
+    color: #9b9b9b;
+  }
+}

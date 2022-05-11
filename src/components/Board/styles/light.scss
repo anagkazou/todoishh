@@ -1,0 +1,10 @@
+.light .board-task {
+    background-color: #fff;
+    box-shadow: unset;
+    border: 1px solid #0000001f;
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 8px 0 #0000001a;
+    }
+  }

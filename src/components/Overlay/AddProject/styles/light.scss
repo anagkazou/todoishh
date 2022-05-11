@@ -1,0 +1,54 @@
+.light .add-project__modal {
+  background-color: #fff;
+
+  &--content {
+    background-color: #fff;
+  }
+}
+
+.light .add-project__project-name,
+.light .add-project__select-color,
+.light .add-project__set-selected-color {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: inherit;
+}
+
+.light .add-project__set-view-type--preview.preview__list {
+  background-image: url("../../../../assets/svg/list-light.svg") !important;
+  &:hover {
+    background-image: url("../../../../assets/svg/list-hover-2.svg") !important;
+  }
+}
+.light .add-project__set-view-type--preview.preview__board {
+  background-image: url("../../../../assets/svg/board-light.svg") !important;
+
+  &:hover {
+    background-image: url("../../../../assets/svg/board-hover-2.svg") !important;
+  }
+}
+
+.light .add-project__modal--footer {
+  border-top: 1px solid #ddd;
+}
+.light .add-project__modal--header {
+  border-bottom: 1px solid #ddd;
+}
+
+.light .add-project__set-view-type--preview {
+  border: 1px solid #ddd;
+}
+.light .btn__cancel {
+  background-color: inherit;
+  border: 1px solid #ddd;
+  color: inherit;
+
+  &:hover {
+    color: #333;
+    border-color: #999;
+    box-shadow: 0 1px 2px #00000026;
+    text-decoration: none !important;
+  }
+}
+
+

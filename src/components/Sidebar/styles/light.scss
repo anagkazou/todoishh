@@ -1,0 +1,20 @@
+.light .sidebar {
+  background-color: #fafafa;
+  .custom-project,
+  .default-project-group {
+    &:hover,
+    &.active {
+      background-color: #eee;
+    }
+  }
+}
+
+.light .custom-project-group__add-project {
+  svg{
+    stroke: #333;
+  }
+  &:hover {
+    background-color: #eee;
+  }
+}
+

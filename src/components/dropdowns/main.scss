@@ -1,0 +1,61 @@
+.set-project__popper--overlay,
+.set-schedule__popper--overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.set-project__popper,
+.set-schedule__popper {
+  padding: 0.4rem 0;
+  position: absolute;
+  background-color: #282828;
+  width: 14rem;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  z-index: 10;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 13px;
+  font-weight: 400;
+  &--option {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.4rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #363636;
+    }
+    &-icon {
+      width: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 4px;
+    }
+  }
+}
+.set-new-task__project,
+.set-new-task__schedule {
+  cursor: pointer;
+  color: #ffffff99;
+
+  &--weekday {
+    margin-left: auto;
+    color: #ffffff99;
+  }
+}
+.set-project__project {
+  top: 2.2rem;
+  left: -6rem;
+}
+
+.set-schedule__popper {
+  top: 2.2rem;
+  left: 0rem;
+  &--option {
+    cursor: pointer;
+  }
+}

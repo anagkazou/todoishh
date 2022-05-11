@@ -1,0 +1,263 @@
+@import "scss/mixins.scss";
+.sidebar {
+  min-width: 248px;
+  height: 100vh;
+  padding: 74px 2px 0 35px;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  z-index: 300;
+  transition: left linear 0.2s;
+  @include respond(tab-port) {
+    padding-top: 60px;
+  }
+  &-clickables {
+    height: fit-content;
+  }
+
+  .hide-sidebar & {
+    left: -285px !important;
+  }
+  @include respond(tab-port) {
+    &__overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      z-index: 299;
+      transition: display ease 0.2s;
+      .hide-sidebar & {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo {
+  height: 24px;
+  width: 100%;
+  background-color: black;
+  margin-bottom: 2rem;
+}
+
+.default-project-group {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 12px 5px 7px;
+  // margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  .menu__trigger {
+    right: 12px;
+  }
+  &:hover {
+    background-color: #363636;
+    border-radius: 5px;
+    .menu__trigger {
+      opacity: 1;
+      padding: 0;
+    }
+  }
+  &.active {
+    background-color: #363636;
+    border-radius: 5px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__icon {
+    width: fit-content;
+    margin-right: 0.6rem;
+    align-items: center;
+    display: flex;
+  }
+
+  &__count {
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+}
+.custom-projects {
+  height: 25vh;
+  overflow-y: scroll;
+}
+
+.custom-project {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  padding: 5px 12px 5px 7px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  // &:hover {
+  //   background-color: #363636;
+  //   border-radius: 5px;
+  //   .menu__trigger {
+  //     opacity: 1;
+  //     padding: 0;
+  //   }
+  // }
+
+  &.active {
+    background-color: #363636;
+    border-radius: 5px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.6rem;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fefbfb;
+    border-radius: 50%;
+  }
+
+  &__name {
+    margin: 0.4rem 0;
+  }
+
+  &-group {
+    &__title-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      padding: 5px 12px 5px 7px;
+      cursor: pointer;
+      &:hover {
+        .custom-project-group__add-project {
+          opacity: 1;
+        }
+      }
+      @include respond(tab-port) {
+        .custom-project-group__add-project {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__icon {
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+    }
+    &__name {
+      font-weight: 700;
+    }
+
+    &__wrapper {
+      margin-bottom: 1rem;
+    }
+    &__add-project {
+      margin-left: auto;
+      cursor: pointer;
+      opacity: 0;
+      display: flex;
+      place-items: center;
+      padding: 0.2rem;
+      background-color: unset;
+      svg {
+        stroke: #ddd;
+      }
+      &:hover {
+        background-color: #363636;
+      }
+      &--icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-content: center;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1.5rem;
+
+  &__dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+}
+
+.add-project {
+  height: fit-content;
+  &__container {
+    margin-left: 1.5rem;
+  }
+  input {
+    height: 1.2rem;
+    width: -webkit-fill-available;
+    margin-bottom: 1rem;
+    font-size: 11px;
+    height: 1.6rem;
+    border: #ffffff1a 1px solid;
+    background-color: transparent;
+    color: gray;
+    border-radius: 5px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 45%;
+      font-size: 11px;
+      height: 1.6rem;
+      border: #ffffff1a 1px solid;
+      background-color: transparent;
+      color: gray;
+      border-radius: 5px;
+    }
+  }
+}
+
+.task-count {
+  color: #777;
+  font-size: 12px;
+  font-weight: 100;
+  width: 24px;
+  text-align: center;
+  &__red {
+    color: #ff7f74;
+  }
+}
