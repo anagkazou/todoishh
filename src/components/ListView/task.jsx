@@ -8,6 +8,7 @@ import { TaskDate } from "components/task-date";
 import { TaskProject } from "components/TaskProject";
 import { useParams } from "react-router-dom";
 import { useOverlayContextValue } from "context";
+import { useSelectedProject } from "hooks";
 export const Task = ({ name, task, projects }) => {
   moment.defaultFormat = "DD-MM-YYYY";
   const { setShowDialog, setDialogProps } = useOverlayContextValue();
@@ -16,7 +17,9 @@ export const Task = ({ name, task, projects }) => {
   const { defaultGroup, projectId } = useParams();
 
   //Todo: change this to 'useSelectedProject' custom hook
-  const { selectedProject } = useSelectedProjectValue();
+  const params = useParams();
+  //const { projects } = useProjects();
+  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);
   const { selectedProjectName } = selectedProject;
   let taskProjectName = "";
   let taskProject = {};

@@ -19,7 +19,7 @@
   }
 
   .hide-sidebar & {
-    left: -285px !important;
+    left: -284px !important;
   }
   @include respond(tab-port) {
     &__overlay {

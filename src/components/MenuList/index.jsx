@@ -1,17 +1,20 @@
+import { ReactComponent as DeleteIcon } from "assets/svg/delete.svg";
+import { ReactComponent as EditIcon } from "assets/svg/edit.svg";
+import { ReactComponent as ArchiveIcon } from "assets/svg/archive.svg";
 import featherIcon from "assets/svg/feather-sprite.svg";
 import { deleteDoc, query, collection, where, getDocs, setDoc, doc } from "firebase/firestore";
 import { useOverlayContextValue, useSelectedProjectValue, useTaskEditorContextValue } from "context";
 import { db } from "_firebase";
-import { useAuth } from "hooks";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuth, useSelectedProject, useProjects } from "hooks";
 import "./styles/menu-list.scss";
 import "./styles/light.scss";
-import { ReactComponent as DeleteIcon } from "assets/svg/delete.svg";
-import { ReactComponent as EditIcon } from "assets/svg/edit.svg";
-import { ReactComponent as ArchiveIcon } from "assets/svg/archive.svg";
-import { useNavigate } from "react-router-dom";
+
 export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsProject, projectId, targetIsTask, taskIsImportant }) => {
   const { currentUser } = useAuth();
-  const { selectedProject, setSelectedProject } = useSelectedProjectValue();
+  const params = useParams();
+  const { projects } = useProjects();
+  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);
   const navigate = useNavigate();
   const { setTaskEditorToShow } = useTaskEditorContextValue();
   const { setShowDialog, showDialog, setDialogProps } = useOverlayContextValue();

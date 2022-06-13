@@ -3,7 +3,6 @@ import { useAuth } from "hooks";
 
 export const UnauthenticatedRoutes = () => {
   const { currentUser } = useAuth();
-  //const localUser = localStorage.getItem("userAuth");
 
-  return  !currentUser ? <Outlet /> : <Navigate to={"/app/Inbox"} />;
+  return currentUser ? <Navigate to={"/app/Inbox"} /> : <Outlet />;
 };

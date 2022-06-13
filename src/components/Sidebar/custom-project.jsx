@@ -1,15 +1,17 @@
 import { useSelectedProjectValue } from "../../context/selected-project-context";
-import { useTasks } from "../../hooks";
+import { useTasks , useSelectedProject, useProjects} from "../../hooks";
 import { useEffect, useState } from "react";
 import { OptionsButton } from "components/MenuButton";
 import { ProjectTasksCounts } from "./project-tasks-count";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
 import { ReactComponent as Dot } from "assets/svg/dot.svg";
-
+import { useParams } from "react-router-dom";
 export const CustomProject = ({ project }) => {
-  const { setSelectedProject } = useSelectedProjectValue();
-  const current = useSelectedProjectValue().selectedProject.selectedProjectId;
+  const params = useParams();
+  const { projects } = useProjects();
+  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);  
+  // const current = useSelectedProjectValue().selectedProject.selectedProjectId;
   const [currentTaskProp, setCurrentTaskProp] = useState([]);
   const { setTasks } = useTasks();
   useEffect(() => {

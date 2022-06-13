@@ -14,7 +14,7 @@ export const TaskDate = ({ date }) => {
   //console.log("DATE!!!!!!!!!!!!!", moment(date, moment.defaultFormat).format("dddd"), isWeekend, date);
 
   //todo: rename this function
-  const getDateStyle = () => {
+  const getDateCustomClass = () => {
     if (isToday) {
       return "date__today";
     }
@@ -47,7 +47,7 @@ export const TaskDate = ({ date }) => {
     return moment(date, moment.defaultFormat).format("MMM DD");
   };
   return (
-    <span className={`task__date ${getDateStyle()}`}>
+    <span className={`task__date ${getDateCustomClass()}`}>
       <ScheduleIcon width="14px" height="14px" />
       {/* {moment(date, moment.defaultFormat).format("DD MMM")} */}
       {getDayName()}

@@ -1,7 +1,8 @@
 import react, { useState, useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { BoardColumn } from "./column";
-import { useBoardData } from "hooks";
+import { useParams } from "react-router-dom";
+import { useBoardData, useSelectedProject, useProjects } from "hooks";
 import { useSelectedProjectValue } from "context/selected-project-context";
 import { db } from "_firebase";
 import { collection, query, getDocs, updateDoc, where } from "firebase/firestore";
@@ -11,8 +12,9 @@ import "./styles/main.scss";
 import "./styles/light.scss";
 import { ViewHeader } from "../ViewHeader";
 export const Board = () => {
-  const { selectedProject } = useSelectedProjectValue();
-
+  const params = useParams();
+  const { projects } = useProjects();
+  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);
   const boardData = useBoardData(selectedProject);
   const { currentUser } = useAuth();
   const [boardState, setBoardState] = useState(boardData);

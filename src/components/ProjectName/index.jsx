@@ -2,13 +2,15 @@ import "./styles/project-name.scss";
 import { useSelectedProjectValue } from "context";
 import { useParams } from "react-router-dom";
 import { getProjectTitle } from "utils";
-import { useProjects } from "hooks";
+import { useProjects , useSelectedProject} from "hooks";
 export const ProjectName = () => {
-  const { selectedProject } = useSelectedProjectValue();
-  const {projects} = useProjects()
+  const params = useParams();
+    const { projectId, defaultGroup } = params;
+
+  const { projects } = useProjects();
+  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects); 
 
   const { selectedProjectName } = selectedProject;
-  const { projectId, defaultGroup } = useParams();
   const customProjectTitle = getProjectTitle(projects, projectId);
   return <h1 className="project__name">{customProjectTitle || defaultGroup}</h1>;
 };

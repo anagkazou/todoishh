@@ -123,8 +123,7 @@ export const useTasks = () => {
   useEffect(() => {
     setLoading(true);
 
-    //TODO: Use constants instead
-    //TODO: Probe why this declaration is necessary!
+   
 
     let q = query(collection(db, "user", `${currentUser && currentUser.id}/tasks`));
     if (selectedProject && !collatedTasksExist(selectedProject)) {
@@ -163,8 +162,8 @@ export const useTasks = () => {
 };
 
 export const useBoardData = (selectedProject) => {
-  const { tasks } = useTasks(selectedProject.selectedProjectId ? selectedProject.selectedProjectId : selectedProject.selectedProjectName);
-  //todo: get board tasks for this selectedproject
+  const { tasks } = useTasks(selectedProject.selectedProjectId ?? selectedProject.selectedProjectName);
+  // const { tasks } = useTasks(selectedProject.selectedProjectId ? selectedProject.selectedProjectId : selectedProject.selectedProjectName);
   const data = {};
   const [boardData, setBoardData] = useState();
   let getColumnTasks = (column) => {

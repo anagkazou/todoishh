@@ -49,7 +49,6 @@ export const SignupForm = () => {
       const userRef = query(collection(db, "user"), where("email", "==", formState.email));
       const userSnap = await getDocs(userRef);
       console.log("usersnap", userSnap);
-      //TODO: Test with a fresh browser and user
       //todo: Configure gloabal EMail error message
       if (userSnap.metadata.fromCache) {
         setEmailIsValid(false);
@@ -77,7 +76,6 @@ export const SignupForm = () => {
   };
 
   const signUpWithEmailAddress = async (event) => {
-    //Todo: work on this flow!!
     event.preventDefault();
     verifyEmail();
 

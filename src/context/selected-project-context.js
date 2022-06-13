@@ -7,6 +7,7 @@ export const SelectedProjectContext = createContext();
 export const SelectedProjectProvider = ({ children }) => {
   const param = useParams();
   const { projectId, defaultGroup } = useParams();
+  console.log('hjjjjjjjjjjjjjjjjjjjjjjj', useParams());
   //TODO: Find out why Params (projectid and defaultGroup) is undefined here
   const { projects } = useProjects();
   // useEffect(() => {
