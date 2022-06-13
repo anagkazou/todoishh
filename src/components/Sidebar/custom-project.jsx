@@ -21,19 +21,19 @@ export const CustomProject = ({ project }) => {
   return (
     <NavLink
       to={`/project/${project.projectId}`}
-      className={({ isActive }) => (isActive ? "active default-project-group" : "default-project-group")}
+      className={({ isActive }) => (isActive ? "active project-group" : "project-group")}
       role="button"
       onClick={() => {
         // setSelectedProject({ selectedProjectName: project.name, selectedProjectId: project.projectId, ...project });
       }}
     >
-      <div className="default-project-group__group">
-        <div className="default-project-group__icon">
+      <div className="project-group__group">
+        <div className="project-group__icon">
           {/* <div className="custom-project__dot" style={{ backgroundColor: `${project?.projectColour?.hex}` }}></div> */}
           {/* <InboxIcon fill="#246fe0" /> */}
           <Dot color={`${project?.projectColour?.hex}`} />
         </div>
-        <p className="default-project-group__name">{currentTaskProp.name}</p>
+        <p className="project-group__name">{currentTaskProp.name}</p>
       </div>
 
       <OptionsButton projectId={project.projectId} targetIsProject project={project} />
