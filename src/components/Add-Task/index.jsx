@@ -82,6 +82,7 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const { defaultProject } = selectedProject;
 
   useEffect(() => {
+    setShowAddTaskForm(false)
     if (defaultGroup || isQuickAdd) {
       setProject({ selectedProjectId: "", selectedProjectName: "Inbox", defaultProject });
     } else {

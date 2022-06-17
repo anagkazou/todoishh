@@ -36,8 +36,8 @@ export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
     taskDocs.forEach(async (taskDoc) => {
       await updateDoc(taskDoc.ref, {
         name: projectName,
+        projectColour: projectColour,
         projectIsList: projectIsList,
-
       });
     });
   };
