@@ -58,7 +58,7 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
 
   const showAddTaskFormHandler = (event) => {
     resetForm(event);
-    setTaskEditorToShow(column?.id || "NEW");
+  //  setTaskEditorToShow(column?.id || "NEW");
     setShowAddTaskForm(!showAddTaskForm);
   };
   const handleChange = (e) => {

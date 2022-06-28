@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       displayName: name,
     }).catch((error) => {
       // An error occurred
-      // ...
+      // ...use
     });
   };
   const signinWithEmail = (email, password) => {

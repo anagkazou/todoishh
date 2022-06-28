@@ -3,13 +3,13 @@ import { useState, useEffect, createContext, useContext } from "react";
 export const TaskEditorContext = createContext();
 
 export const TaskEditorContextProvider = ({ children }) => {
-  const [taskEditorToShow, setTaskEditorToShow] = useState();
+  const [taskEditorContextState, setTaskEditorContextState] = useState();
 
   useEffect(() => {
-    console.log("fffffffffffffffffff", taskEditorToShow);
-  }, [taskEditorToShow]);
+    console.log("fffffffffffffffffff", taskEditorContextState);
+  }, [taskEditorContextState]);
 
-  return <TaskEditorContext.Provider value={{ taskEditorToShow, setTaskEditorToShow }}>{children}</TaskEditorContext.Provider>;
+  return <TaskEditorContext.Provider value={{ taskEditorContextState, setTaskEditorContextState }}>{children}</TaskEditorContext.Provider>;
 };
 
 export const useTaskEditorContextValue = () => useContext(TaskEditorContext);
