@@ -1,6 +1,10 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
+import { generatePushId } from "utils";
+import { collection } from "firebase/firestore";
+import { icebreakerTasks } from "./icebreakerTasks";
 
 const firebaseConfig = initializeApp({
   //   apiKey: 'AIzaSyCACofwubevtI5Y6rxyk1f-ubGzAhd7hXA',
@@ -23,6 +27,38 @@ export const auth = getAuth(firebaseConfig);
 export const provider = new GoogleAuthProvider();
 export const db = getFirestore(firebaseConfig);
 export { firebaseConfig as firebase };
+
+export const batchWriteIcebreakerTasks = async (userId) => {
+  const icebreakerProjectId = "00000abc";
+  try {
+    const icebreakerProject = {
+      name: "Welcome 👋",
+      projectId: icebreakerProjectId,
+      projectColour: {
+        name: "Charcoal",
+        hex: "#808080",
+      },
+      projectIsList: true,
+    };
+    const projectsDocRef = doc(collection(db, "user", `${userId}/projects`));
+    setDoc(projectsDocRef, icebreakerProject);
+    // .then(() => {
+    //   setProjects({ ...newProject });
+    // });
+  } catch (error) {
+    console.log(error);
+  }
+
+  let batch = writeBatch(db);
+  while (icebreakerTasks.length) {
+    //batch.set(collection(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
+    batch.set(doc(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
+    if (!icebreakerTasks.length) {
+      await batch.commit();
+    }
+  }
+};
+
 export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
 
@@ -34,7 +70,7 @@ export const createUserProfileDocument = async (userAuth) => {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
-    console.log("Doc data:", userSnapshot.data());
+    batchWriteIcebreakerTasks(userAuth.uid)
 
     try {
       await setDoc(userRef, { displayName, createdAt, email });

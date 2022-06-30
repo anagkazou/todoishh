@@ -27,8 +27,11 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const { currentUser } = useAuth();
   const [disabled, setDisabled] = useState(true);
   const { taskEditorToShow, setTaskEditorToShow } = useTaskEditorContextValue();
-
   const { isLight } = useThemeContextValue();
+
+
+console.log('iiiiiiiii', showAddTaskForm);
+
   const addTaskToFirestore = async (event) => {
     event.preventDefault();
     const taskId = generatePushId();
@@ -58,7 +61,7 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
 
   const showAddTaskFormHandler = (event) => {
     resetForm(event);
-  //  setTaskEditorToShow(column?.id || "NEW");
+   setTaskEditorToShow(column?.id || "NEW");
     setShowAddTaskForm(!showAddTaskForm);
   };
   const handleChange = (e) => {
@@ -82,13 +85,13 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const { defaultProject } = selectedProject;
 
   useEffect(() => {
-    setShowAddTaskForm(false)
+   // setShowAddTaskForm(false)
     if (defaultGroup || isQuickAdd) {
       setProject({ selectedProjectId: "", selectedProjectName: "Inbox", defaultProject });
     } else {
       setProject({ ...selectedProject });
     }
-    if (defaultGroup == "Today") {
+    if (defaultGroup === "Today") {
       setSchedule({ day: "Today", date: moment().format("DD-MM-YYYY") });
     } else if (isEdit) {
       console.log("THE DATE!", task);

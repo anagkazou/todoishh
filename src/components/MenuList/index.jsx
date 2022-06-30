@@ -73,6 +73,7 @@ export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsP
     e.preventDefault();
     e.stopPropagation();
     if (targetIsTask) {
+      console.log(taskId);
       setTaskEditorToShow(taskId);
       closeOverlay(e);
     } else {

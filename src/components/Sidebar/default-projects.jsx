@@ -43,6 +43,8 @@ export const DefaultProjects = () => {
 
           <div className="project-group__name">Scheduled</div>
         </div>
+        <ProjectTasksCounts isDefaultGroup name={"Scheduled"} />
+
       </NavLink>
       <NavLink to={"/app/Important"} className={({ isActive }) => (isActive ? "active project-group" : "project-group")}>
         <div className="project-group__group">

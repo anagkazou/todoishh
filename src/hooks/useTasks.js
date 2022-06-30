@@ -27,7 +27,6 @@ export const useTasks = () => {
     } else if (selectedProject === "Inbox" || selectedProject === 0) {
       q = query(collection(db, "user", `${currentUser && currentUser.id}/tasks`), where("projectId", "==", ""));
     } else if (selectedProject === "Scheduled") {
-      //TODO: this is still buggy...something about query indexes because you are doing more than one query
       q = query(collection(db, "user", `${currentUser && currentUser.id}/tasks`), where("date", "!=", ""), where("completed", "==", false));
     } else if (selectedProject === "Important") {
       q = query(collection(db, "user", `${currentUser && currentUser.id}/tasks`), where("important", "==", true));
