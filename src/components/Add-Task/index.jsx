@@ -29,9 +29,6 @@ export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const { taskEditorToShow, setTaskEditorToShow } = useTaskEditorContextValue();
   const { isLight } = useThemeContextValue();
 
-
-console.log('iiiiiiiii', showAddTaskForm);
-
   const addTaskToFirestore = async (event) => {
     event.preventDefault();
     const taskId = generatePushId();
@@ -57,11 +54,12 @@ console.log('iiiiiiiii', showAddTaskForm);
     // setSchedule({ day: "", date: "" });
     isQuickAdd && closeOverlay();
     setTaskName("");
+    setTaskEditorToShow("");
   };
 
   const showAddTaskFormHandler = (event) => {
     resetForm(event);
-   setTaskEditorToShow(column?.id || "NEW");
+    setTaskEditorToShow(column?.id || "");
     setShowAddTaskForm(!showAddTaskForm);
   };
   const handleChange = (e) => {
@@ -85,7 +83,6 @@ console.log('iiiiiiiii', showAddTaskForm);
   const { defaultProject } = selectedProject;
 
   useEffect(() => {
-   // setShowAddTaskForm(false)
     if (defaultGroup || isQuickAdd) {
       setProject({ selectedProjectId: "", selectedProjectName: "Inbox", defaultProject });
     } else {
@@ -100,6 +97,11 @@ console.log('iiiiiiiii', showAddTaskForm);
     }
   }, [defaultGroup]);
 
+  useEffect(() => {
+    if (taskEditorToShow === "NEW") {
+      setShowAddTaskForm(true);
+    }
+  }, [taskEditorToShow]);
   return (
     <div
       className={`add-task__wrapper ${isQuickAdd && "quick-add__wrapper"}`}

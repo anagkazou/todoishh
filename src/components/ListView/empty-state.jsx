@@ -10,13 +10,14 @@ import { ReactComponent as EmptyState3Dark } from "assets/svg/empty-3-dark.svg";
 import { ReactComponent as EmptyState3Light } from "assets/svg/empty-3-light.svg";
 import { ReactComponent as EmptyStateInboxDark } from "assets/svg/empty-inbox-dark.svg";
 import { ReactComponent as EmptyStateInboxLight } from "assets/svg/empty-inbox-light.svg";
-import { useThemeContextValue } from "context";
+import { useTaskEditorContextValue, useThemeContextValue } from "context";
 import { useNavigate, useParams } from "react-router-dom";
 const index = Math.floor(Math.random() * 2);
 
 export const EmptyState = () => {
   const { isLight } = useThemeContextValue();
   const { defaultGroup } = useParams();
+  const { taskEditorToShow, setTaskEditorToShow } = useTaskEditorContextValue();
   const getRandomEmptyStateIllustration = () => {
     const emptyStateIllustrationsDark = [<EmptyStateDark />, <EmptyState2Dark />, <EmptyState3Dark />];
     const emptyStateIllustrationsLight = [<EmptyStateLight />, <EmptyState2Light />, <EmptyState3Light />];
@@ -75,6 +76,15 @@ export const EmptyState = () => {
       <div className="empty-state__illustration">{getRandomEmptyStateIllustration()} </div>
 
       {getEmptyStateText()}
+      <button
+      className="empty-state__button"
+        onClick={(e) => {
+          e.preventDefault();
+          setTaskEditorToShow("NEW");
+        }}
+      >
+        Add Task
+      </button>
     </div>
   );
 };

@@ -45,17 +45,16 @@ export const batchWriteIcebreakerTasks = async (userId) => {
     // .then(() => {
     //   setProjects({ ...newProject });
     // });
+    let batch = writeBatch(db);
+    while (icebreakerTasks.length) {
+      //batch.set(collection(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
+      batch.set(doc(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
+      if (!icebreakerTasks.length) {
+        batch.commit();
+      }
+    }
   } catch (error) {
     console.log(error);
-  }
-
-  let batch = writeBatch(db);
-  while (icebreakerTasks.length) {
-    //batch.set(collection(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
-    batch.set(doc(db, "user", `${userId}/tasks/${Math.random().toString(36).substring(2, 15)}`), icebreakerTasks.pop());
-    if (!icebreakerTasks.length) {
-      await batch.commit();
-    }
   }
 };
 
@@ -70,13 +69,9 @@ export const createUserProfileDocument = async (userAuth) => {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
-    batchWriteIcebreakerTasks(userAuth.uid)
-
-    try {
-      await setDoc(userRef, { displayName, createdAt, email });
-    } catch (error) {
-      console.log("Error creating user :", error.message);
-    }
+    setDoc(userRef, { displayName, createdAt, email })
+      .then(() => batchWriteIcebreakerTasks(userAuth.uid))
+      .catch((err) => console.log(err));
   }
   return userRef;
 };

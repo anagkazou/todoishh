@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       displayName: name,
     }).catch((error) => {
       // An error occurred
-      // ...use
+      // ...
     });
   };
   const signinWithEmail = (email, password) => {
@@ -78,7 +78,8 @@ export const AuthProvider = ({ children }) => {
             id: snapshot.id,
           };
           setCurrentUser(user);
-          
+          console.log("USER", user);
+
           localStorage.setItem("userAuth", JSON.stringify(user));
         });
       } else {
@@ -89,7 +90,9 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  
+  // useEffect(() => {
+  //   return !currentUser ? navigate("/") : null;
+  // }, [currentUser]);
   const authValue = {
     currentUser,
     signupWithEmail,
