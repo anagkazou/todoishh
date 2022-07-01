@@ -119,7 +119,7 @@ export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsP
           </li>
 
           {targetIsProject && (
-            <li className="menu__list--item">
+            <li className="menu__list--item" style={{ opacity: 0.5 }}>
               <div className="menu__list--icon">
                 <ArchiveIcon />
               </div>

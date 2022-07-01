@@ -7,7 +7,7 @@ const colours = [
   },
   {
     name: "Red",
-    hex: "#b8255f",
+    hex: "#db4035",
   },
   {
     name: "Orange",
@@ -15,7 +15,7 @@ const colours = [
   },
   {
     name: "Yellow",
-    hex: "#ff9933",
+    hex: "#fad000",
   },
   {
     name: "Olive Green",

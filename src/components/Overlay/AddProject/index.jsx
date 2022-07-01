@@ -25,6 +25,7 @@ export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
   const [selectedColour, setSelectedColour] = useState(projectColour);
   const projectId = generatePushId();
   const { setShowDialog } = useOverlayContextValue();
+  const [disableSubmit, setDisableSubmit] = useState(true);
 
   const updateProjectHandler = async (e) => {
     e.preventDefault();
@@ -62,6 +63,12 @@ export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
   };
 
   const handleChange = (e) => {
+    const projectNameInputValue = e.target.value;
+    if (!projectNameInputValue.length) {
+      setDisableSubmit(true);
+    } else {
+      setDisableSubmit(false);
+    }
     setprojectName(e.target.value);
   };
   return (
@@ -133,7 +140,7 @@ export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
                   <div className="add-project__set-view-type--preview preview__board" />
                   <div className="add-project__set-view-type--description">
                     <div className="add-project__set-view-type--radio">
-                      <svg width="11" height="11" fill="none" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="11" height="11" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <use xlinkHref={`${featherIcon}#check`}></use>
                       </svg>
                     </div>
@@ -152,7 +159,11 @@ export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
             <button
               className="action action__add-project"
               type="submit"
-              onClick={(e) => (isEdit ? updateProjectHandler(e) : addProjectHandler(e))}
+              disabled={disableSubmit}
+              onClick={(e) => {
+                e.preventDefault();
+                isEdit ? updateProjectHandler(e) : addProjectHandler(e);
+              }}
             >
               {isEdit ? "Save" : "Add"}
             </button>

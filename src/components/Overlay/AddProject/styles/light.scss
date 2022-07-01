@@ -4,8 +4,14 @@
   &--content {
     background-color: #fff;
   }
-}
+  header h4 {
+    color: black;
+  }
 
+  label {
+    color: black;
+  }
+}
 .light .add-project__project-name,
 .light .add-project__select-color,
 .light .add-project__set-selected-color {
@@ -51,4 +57,10 @@
   }
 }
 
+.light .add-project__set-view-type .selected.add-project__set-view-type--option .add-project__set-view-type--preview {
+  border-color: #d1453b;
+}
 
+.light .add-project__set-view-type .selected.add-project__set-view-type--option .add-project__set-view-type--radio {
+  background-color: #d1453b;
+}
