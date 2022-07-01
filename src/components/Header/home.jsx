@@ -1,7 +1,6 @@
+import { ReactComponent as HomeIcon } from "assets/svg/home.svg";
 import { useProjects, useSelectedProject } from "hooks";
 import { Link, useParams } from "react-router-dom";
-import featherIcon from "../../assets/svg/feather-sprite.svg";
-import { ReactComponent as HomeIcon } from "assets/svg/home.svg";
 export const HomeButton = () => {
   const params = useParams();
   const { projects } = useProjects();

@@ -1,12 +1,10 @@
-import { useSelectedProjectValue } from "context/selected-project-context";
-import featherIcon from "assets/svg/feather-sprite.svg";
-import { useState, useEffect } from "react";
-import { SetNewTaskProjectPopper } from "../dropdowns/set-new-task-project-popper";
-import { useOverlayContextValue } from "context";
-import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
-import { useParams } from "react-router-dom";
-import { useProjects, useSelectedProject } from "hooks";
 import { ReactComponent as Dot } from "assets/svg/dot.svg";
+import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
+import { useOverlayContextValue } from "context";
+import { useProjects, useSelectedProject } from "hooks";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { SetNewTaskProjectPopper } from "../dropdowns/set-new-task-project-popper";
 export const SetNewTaskProject = ({ isQuickAdd, project, closeOverlay, xPosition, yPosition, setProject }) => {
   const params = useParams();
   // const { selectedProject } = useSelectedProjectValue(params);

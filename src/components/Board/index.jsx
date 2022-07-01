@@ -1,16 +1,13 @@
-import react, { useState, useEffect } from "react";
+import { collection, getDocs, query, updateDoc, where } from "firebase/firestore";
+import { useAuth, useBoardData, useProjects, useSelectedProject } from "hooks";
+import { useEffect, useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import { BoardColumn } from "./column";
 import { useParams } from "react-router-dom";
-import { useBoardData, useSelectedProject, useProjects } from "hooks";
-import { useSelectedProjectValue } from "context/selected-project-context";
 import { db } from "_firebase";
-import { collection, query, getDocs, updateDoc, where } from "firebase/firestore";
-import { useAuth } from "hooks";
-import { BoardAddTaskContextProvider } from "context/board-add-task-context";
-import "./styles/main.scss";
-import "./styles/light.scss";
 import { ViewHeader } from "../ViewHeader";
+import { BoardColumn } from "./column";
+import "./styles/light.scss";
+import "./styles/main.scss";
 export const Board = () => {
   const params = useParams();
   const { projects } = useProjects();

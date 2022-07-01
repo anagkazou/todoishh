@@ -1,8 +1,7 @@
-import "./main.scss";
-import { useProjects } from "hooks";
 import featherIcon from "assets/svg/feather-sprite.svg";
-import { useSelectedProjectValue } from "context/selected-project-context";
 import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
+import { useProjects } from "hooks";
+import "./main.scss";
 
 export const SetNewTaskProjectPopper = ({
   setShowPopup,

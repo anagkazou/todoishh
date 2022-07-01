@@ -1,12 +1,10 @@
-import { ProjectTasksCounts } from "./project-tasks-count";
-import moment from "moment";
-import { NavLink } from "react-router-dom";
 import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
 import { ReactComponent as ScheduledIcon } from "assets/svg/scheduled.svg";
-import { TodayIcon } from "components/today-icon";
-import { FeatherIcons } from "assets/svg/feather-icons";
 import { ReactComponent as ImportantIcon } from "assets/svg/star.svg";
+import { TodayIcon } from "components/today-icon";
 import { useThemeContextValue } from "context";
+import { NavLink } from "react-router-dom";
+import { ProjectTasksCounts } from "./project-tasks-count";
 export const DefaultProjects = () => {
   //todo:find out why this isnt destructuring
   const { isLight } = useThemeContextValue();

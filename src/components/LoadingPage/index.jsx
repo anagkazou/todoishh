@@ -1,8 +1,8 @@
-import "./main.scss";
-import { ReactComponent as Logo } from "assets/svg/logo-mobile.svg";
 import { ReactComponent as LogoDark } from "assets/svg/logo-mobile-dark.svg";
+import { ReactComponent as Logo } from "assets/svg/logo-mobile.svg";
 import { Spinner } from "components/Spinner";
 import { useThemeContextValue } from "context";
+import "./main.scss";
 export const LoadingPage = () => {
   const { isLight } = useThemeContextValue();
 

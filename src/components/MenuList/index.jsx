@@ -1,14 +1,14 @@
+import { ReactComponent as ArchiveIcon } from "assets/svg/archive.svg";
 import { ReactComponent as DeleteIcon } from "assets/svg/delete.svg";
 import { ReactComponent as EditIcon } from "assets/svg/edit.svg";
-import { ReactComponent as ArchiveIcon } from "assets/svg/archive.svg";
 import featherIcon from "assets/svg/feather-sprite.svg";
-import { deleteDoc, query, collection, where, getDocs, setDoc, doc } from "firebase/firestore";
-import { useOverlayContextValue, useSelectedProjectValue, useTaskEditorContextValue } from "context";
-import { db } from "_firebase";
+import { useOverlayContextValue, useTaskEditorContextValue } from "context";
+import { collection, deleteDoc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { useAuth, useProjects, useSelectedProject } from "hooks";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAuth, useSelectedProject, useProjects } from "hooks";
-import "./styles/menu-list.scss";
+import { db } from "_firebase";
 import "./styles/light.scss";
+import "./styles/menu-list.scss";
 
 export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsProject, projectId, targetIsTask, taskIsImportant }) => {
   const { currentUser } = useAuth();

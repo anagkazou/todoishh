@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ReactComponent as ScheduleIcon } from "assets/svg/scheduler.svg";
 import { SetNewTaskSchedulePopup } from "components/dropdowns/set-new-task-schedule-popup";
 import { useOverlayContextValue } from "context";

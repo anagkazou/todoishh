@@ -1,9 +1,7 @@
-import { useRef } from "react";
+import { ReactComponent as TooltipIcon } from 'assets/svg/tooltip-trigger.svg';
 import { useOverlayContextValue } from "context/overlay-context";
-import featherIcon from "assets/svg/feather-sprite.svg";
-import "./styles/menu-button.scss";
 import "./styles/light.scss";
-import {ReactComponent as TooltipIcon} from 'assets/svg/tooltip-trigger.svg'
+import "./styles/menu-button.scss";
 
 export const OptionsButton = ({ taskId, targetIsProject, targetIsTask, project, projectId, isHeaderButton, taskIsImportant }) => {
   const { setShowDialog, setDialogProps } = useOverlayContextValue();

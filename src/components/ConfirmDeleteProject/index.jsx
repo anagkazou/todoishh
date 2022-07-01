@@ -1,13 +1,12 @@
-import { query, collection, getDocs, deleteDoc, where } from "firebase/firestore";
-import { useAuth } from "hooks";
-import { db } from "_firebase";
-import { useNavigate } from "react-router-dom";
 import { ReactComponent as InfoIcon } from "assets/svg/info.svg";
 import { ReactComponent as CancelIcon } from "assets/svg/plus.svg";
+import { collection, deleteDoc, getDocs, query, where } from "firebase/firestore";
+import { useAuth, useProjects } from "hooks";
+import { useNavigate } from "react-router-dom";
 import { getProjectTitle } from "utils";
-import { useProjects } from "hooks";
-import "./main.scss";
+import { db } from "_firebase";
 import "./light.scss";
+import "./main.scss";
 export const ConfrimDeleteProject = ({ projectId, closeOverlay }) => {
   const { currentUser } = useAuth();
   const navigate = useNavigate();

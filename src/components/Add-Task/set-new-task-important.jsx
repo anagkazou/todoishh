@@ -1,5 +1,3 @@
-import { useSelectedProjectValue } from "../../../../../context/selected-project-context";
-import { useProjects } from "../../../../../hooks";
 import featherIcon from "../../../../../assets/svg/feather-sprite.svg";
 
 export const SetNewTaskImportant = ({ important, setImportant }) => {

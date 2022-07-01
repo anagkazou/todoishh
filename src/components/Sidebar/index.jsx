@@ -1,10 +1,7 @@
-import { useSelectedProjectValue } from "context/selected-project-context";
-import { defaultTaskGroups } from "constants/constants";
-import "./styles/main.scss";
-import "./styles/light.scss";
 import { CustomProjects } from "./custom-projects";
 import { DefaultProjects } from "./default-projects";
-import { ReactComponent as InboxIcon } from "assets/svg/inbox.svg";
+import "./styles/light.scss";
+import "./styles/main.scss";
 
 export const Sidebar = (props) => {
   return (

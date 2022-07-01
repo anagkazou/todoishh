@@ -1,8 +1,8 @@
 import featherIcon from "assets/svg/feather-sprite.svg";
-import { updateDoc, query, collection, where, getDocs } from "firebase/firestore";
-
-import { db } from "_firebase";
+import { collection, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { useAuth } from "hooks";
+import { db } from "_firebase";
+
 
 export const ViewOptions = ({ closeOverlay, xPosition, yPosition, projectId }) => {
   const { currentUser } = useAuth();

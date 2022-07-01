@@ -1,12 +1,12 @@
-import { Task } from "./task";
-import { useProjects, useTasks } from "hooks";
 import { TaskEditor } from "components/Add-Task";
-import "./styles/listview.scss";
-import "./styles/light.scss";
 import { ViewHeader } from "components/ViewHeader";
-import { EmptyState } from "./empty-state";
-import { useParams } from "react-router-dom";
 import { useTaskEditorContextValue } from "context";
+import { useProjects, useTasks } from "hooks";
+import { useParams } from "react-router-dom";
+import { EmptyState } from "./empty-state";
+import "./styles/light.scss";
+import "./styles/listview.scss";
+import { Task } from "./task";
 
 export const TaskList = () => {
   const { projectId, defaultGroup } = useParams();

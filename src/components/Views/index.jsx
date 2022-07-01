@@ -1,15 +1,12 @@
-import { Sidebar } from "components/Sidebar";
 import { Content } from "components/Content";
-import { Overlay } from "components/Overlay";
-import { Header } from "components/Header";
-import { SelectedProjectProvider, ProjectsContextProvider, useOverlayContextValue, useThemeContextValue } from "context";
-
-import { BrowserRouter as Router, Route, Routes, Navigate, matchPath, Redirect } from "react-router-dom";
-import { Layout } from "components/Layout";
-import { LandingPage } from "pages/landing-page";
 import { DashBoardRoutes } from "components/DashBoardRoutes";
-import { AuthenticationPage } from "pages/authentication";
+import { Layout } from "components/Layout";
 import { UnauthenticatedRoutes } from "components/UnauthenticatedRoutes";
+import { ProjectsContextProvider } from "context";
+import { AuthenticationPage } from "pages/authentication";
+import { LandingPage } from "pages/landing-page";
+import { Route, Routes } from "react-router-dom";
+
 export const Views = () => {
   return (
     <ProjectsContextProvider>

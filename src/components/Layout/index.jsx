@@ -1,12 +1,12 @@
-import { useState, useCallback, useEffect } from "react";
 import { Header } from "components/Header";
+import { LoadingPage } from "components/LoadingPage";
 import { Overlay } from "components/Overlay";
 import { Sidebar } from "components/Sidebar";
-import { Outlet, useParams } from "react-router-dom";
-import { useThemeContextValue, useTaskEditorContextValue } from "context";
-import { useProjects } from "hooks";
-import { LoadingPage } from "components/LoadingPage";
+import { useThemeContextValue } from "context";
 import { TaskEditorContextProvider } from "context/board-add-task-context";
+import { useProjects } from "hooks";
+import { useCallback, useEffect, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
 
 export const Layout = () => {
   const { isLight, setIsLight } = useThemeContextValue();

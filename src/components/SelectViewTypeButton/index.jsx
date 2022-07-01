@@ -1,12 +1,9 @@
-import { useSelectedProjectValue } from "context";
+import { ReactComponent as SliderIcon } from 'assets/svg/toggle-view.svg';
 import { useOverlayContextValue } from "context";
+import { useProjects, useSelectedProject } from "hooks";
 import { useParams } from "react-router-dom";
-import { useProjects } from "hooks";
-import featherIcon from "assets/svg/feather-sprite.svg";
-import "./styles/main.scss";
 import "./styles/light.scss";
-import { useSelectedProject } from "hooks";
-import {ReactComponent as SliderIcon} from 'assets/svg/toggle-view.svg'
+import "./styles/main.scss";
 
 export const SelectViewType = () => {
   const params = useParams();

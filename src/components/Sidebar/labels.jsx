@@ -1,7 +1,5 @@
 import { useState } from "react";
 import featherIcon from "../../../../assets/svg/feather-sprite.svg";
-import { useProjects } from "../../../../hooks";
-import { CustomProject } from "./custom-project";
 import { Label } from "./label";
 export const Labels = () => {
   //   const {projects} = useProjects()

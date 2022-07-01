@@ -1,8 +1,7 @@
-import "./styles/project-name.scss";
-import { useSelectedProjectValue } from "context";
+import { useProjects, useSelectedProject } from "hooks";
 import { useParams } from "react-router-dom";
 import { getProjectTitle } from "utils";
-import { useProjects , useSelectedProject} from "hooks";
+import "./styles/project-name.scss";
 export const ProjectName = () => {
   const params = useParams();
     const { projectId, defaultGroup } = params;

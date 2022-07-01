@@ -1,9 +1,8 @@
-import { useState } from "react";
 import featherIcon from "assets/svg/feather-sprite.svg";
-import plus from "assets/svg/add.svg";
-import { useProjects } from "hooks";
-import { CustomProject } from "./custom-project";
 import { useOverlayContextValue } from "context/overlay-context";
+import { useProjects } from "hooks";
+import { useState } from "react";
+import { CustomProject } from "./custom-project";
 export const CustomProjects = () => {
   const { projects } = useProjects();
   const [showProjects, setShowProjects] = useState(true);

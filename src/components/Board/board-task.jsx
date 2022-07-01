@@ -1,11 +1,11 @@
-import { Draggable } from "react-beautiful-dnd";
-import { OptionsButton } from "components/MenuButton";
 import { TaskCheckbox } from "components/Checkbox";
+import { OptionsButton } from "components/MenuButton";
 import { TaskDate } from "components/task-date";
 import { TaskProject } from "components/TaskProject";
+import { useProjects } from "hooks";
+import { Draggable } from "react-beautiful-dnd";
 import { useParams } from "react-router-dom";
 import { getProjectInfo } from "utils";
-import { useProjects } from "hooks";
 export const BoardTask = ({ task, index }) => {
   const { defaultGroup } = useParams();
   const { projects } = useProjects();

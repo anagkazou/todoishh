@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import { Tasks } from "components/Tasks";
-import { useSelectedProjectValue } from "context/selected-project-context";
-import { useSelectedProjectInfo, useTasks, useProjects, useSelectedProject } from "hooks";
-import { TaskList } from "components/ListView";
 import { Board } from "components/Board/index";
+import { TaskList } from "components/ListView";
+import { useProjects, useSelectedProject, useSelectedProjectInfo } from "hooks";
+import React from "react";
 import { useParams } from "react-router-dom";
 import "./styles/content.scss";
 import "./styles/light.scss";
-import { TaskEditorContextProvider } from "context/board-add-task-context";
 export const Content = () => {
   const params = useParams();
   const { projects } = useProjects();

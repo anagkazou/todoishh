@@ -1,5 +1,5 @@
 import featherIcon from "assets/svg/feather-sprite.svg";
-import { updateDoc, where, query, getDocs, collection } from "firebase/firestore";
+import { collection, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { useAuth } from "hooks";
 import { db } from "_firebase";
 export const TaskCheckbox = ({ taskId }) => {

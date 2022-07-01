@@ -1,9 +1,9 @@
-import "./main.scss";
-import "./light.scss";
-import { HomeButton } from "./home";
-import { HamburgerButton } from "./hamburger";
 import { Avatar } from "./avatar";
 import { Github } from "./github";
+import { HamburgerButton } from "./hamburger";
+import { HomeButton } from "./home";
+import "./light.scss";
+import "./main.scss";
 import { Notifications } from "./notifications";
 import { QuickAddTask } from "./quick-add-task";
 export const Header = (props) => {

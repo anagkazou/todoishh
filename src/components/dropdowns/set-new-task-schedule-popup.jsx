@@ -1,12 +1,12 @@
-import "./main.scss";
-import "./light.scss";
-
-import moment from "moment";
-import { ReactComponent as WeekendIcon } from "assets/svg/weekend.svg";
 import { ReactComponent as NextWeekIcon } from "assets/svg/next-week.svg";
-import { ReactComponent as SetScheduleIcon } from "assets/svg/set-schedule.svg";
 import { ReactComponent as NoDateIcon } from "assets/svg/none.svg";
+import { ReactComponent as SetScheduleIcon } from "assets/svg/set-schedule.svg";
+import { ReactComponent as WeekendIcon } from "assets/svg/weekend.svg";
 import { TodayIcon } from "components/today-icon";
+import moment from "moment";
+import "./light.scss";
+import "./main.scss";
+
 
 export const SetNewTaskSchedulePopup = ({ isQuickAdd, setShowPopup, setSchedule, closeOverlay, xPosition, yPosition, parentPosition }) => {
   const setNext7days = () => {

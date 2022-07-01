@@ -1,17 +1,17 @@
-import { ReactComponent as EmptyStateDark } from "assets/svg/empty.svg";
-import { ReactComponent as EmptyStateLight } from "assets/svg/empty-light.svg";
-import { ReactComponent as EmptyStateTodayDark } from "assets/svg/empty-today-dark.svg";
-import { ReactComponent as EmptyStateTodayLight } from "assets/svg/empty-today-light.svg";
-import { ReactComponent as EmptyStateToday2Light } from "assets/svg/empty-2-today-light.svg";
-import { ReactComponent as EmptyStateToday2Dark } from "assets/svg/empty-2-today-dark.svg";
-import { ReactComponent as EmptyState2Light } from "assets/svg/empty-2-light.svg";
 import { ReactComponent as EmptyState2Dark } from "assets/svg/empty-2-dark.svg";
+import { ReactComponent as EmptyState2Light } from "assets/svg/empty-2-light.svg";
+import { ReactComponent as EmptyStateToday2Dark } from "assets/svg/empty-2-today-dark.svg";
+import { ReactComponent as EmptyStateToday2Light } from "assets/svg/empty-2-today-light.svg";
 import { ReactComponent as EmptyState3Dark } from "assets/svg/empty-3-dark.svg";
 import { ReactComponent as EmptyState3Light } from "assets/svg/empty-3-light.svg";
 import { ReactComponent as EmptyStateInboxDark } from "assets/svg/empty-inbox-dark.svg";
 import { ReactComponent as EmptyStateInboxLight } from "assets/svg/empty-inbox-light.svg";
+import { ReactComponent as EmptyStateLight } from "assets/svg/empty-light.svg";
+import { ReactComponent as EmptyStateTodayDark } from "assets/svg/empty-today-dark.svg";
+import { ReactComponent as EmptyStateTodayLight } from "assets/svg/empty-today-light.svg";
+import { ReactComponent as EmptyStateDark } from "assets/svg/empty.svg";
 import { useTaskEditorContextValue, useThemeContextValue } from "context";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 const index = Math.floor(Math.random() * 2);
 
 export const EmptyState = () => {
