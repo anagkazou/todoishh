@@ -1,6 +1,6 @@
 import { Task } from "./task";
 import { useProjects, useTasks } from "hooks";
-import { AddTask } from "components/Add-Task";
+import { TaskEditor } from "components/Add-Task";
 import "./styles/listview.scss";
 import "./styles/light.scss";
 import { ViewHeader } from "components/ViewHeader";
@@ -24,12 +24,12 @@ console.log('gggggggggggg', taskEditorToShow);
           return (
             <>
               {taskEditorToShow != task.taskId && <Task name={task.name} key={task.taskId} task={task} projects={projects} />}
-              {taskEditorToShow == task.taskId && <AddTask taskId={task.taskId} task={task} projects={projects} isEdit />}
+              {taskEditorToShow == task.taskId && <TaskEditor taskId={task.taskId} task={task} projects={projects} isEdit />}
             </>
           );
         })}
 
-      {defaultGroup !== "Important" && <AddTask projects={projects} />}
+      {defaultGroup !== "Important" && <TaskEditor projects={projects} />}
       {tasks.length ? null : <EmptyState />}
     </div>
   );

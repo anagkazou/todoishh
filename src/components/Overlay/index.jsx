@@ -1,29 +1,26 @@
-import { useOverlayContextValue } from "context/overlay-context";
-import "./main.scss";
-import { useEffect } from "react";
-import { AddProject } from "./AddProject";
+import { ConfrimDeleteProject } from "components/ConfirmDeleteProject";
+import { SetNewTaskProjectPopper } from "components/dropdowns/set-new-task-project-popper";
+import { SetNewTaskSchedulePopup } from "components/dropdowns/set-new-task-schedule-popup";
 import { MenuList } from "components/MenuList";
-import { QuickAddTaskDialog } from "./quick-add-task-dialog";
 import { UserOptions } from "components/UserOption";
 import { ViewOptions } from "components/ViewOptions";
-import { useAuth } from "hooks";
-//TODO: fix these names
-import { SetNewTaskSchedulePopup } from "components/dropdowns/set-new-task-schedule-popup";
-import { SetNewTaskProjectPopper } from "components/dropdowns/set-new-task-project-popper";
-import { ConfrimDeleteProject } from "components/ConfirmDeleteProject";
+import { useOverlayContextValue } from "context/overlay-context";
+import { useEffect } from "react";
+import "./main.scss";
+import { ProjectEditor } from "./ProjectEditor";
+import { QuickAddTaskDialog } from "./quick-add-task-dialog";
 export const Overlay = () => {
   const { showDialog, setShowDialog, dialogProps, setDialogProps } = useOverlayContextValue();
   const closeOverlay = () => {
     setShowDialog("");
   };
-  //TODO: Refactor so you can efficiently spread dialog props into components
   useEffect(() => {
     setShowDialog(false);
   }, []);
   const renderSwitch = (params) => {
     switch (showDialog) {
       case "ADD_PROJECT":
-        return <AddProject closeOverlay={closeOverlay} />;
+        return <ProjectEditor closeOverlay={closeOverlay} />;
       case "QUICK_ADD_TASK":
         return <QuickAddTaskDialog closeOverlay={closeOverlay} />;
       case "USER_OPTIONS":
@@ -74,7 +71,7 @@ export const Overlay = () => {
           />
         );
       case "EDIT_PROJECT":
-        return <AddProject isEdit projectToEdit={dialogProps.project} closeOverlay={closeOverlay} />;
+        return <ProjectEditor isEdit projectToEdit={dialogProps.project} closeOverlay={closeOverlay} />;
 
       case "CONFIRM_DELETE":
         console.log("OPOPOPOPOPOP");

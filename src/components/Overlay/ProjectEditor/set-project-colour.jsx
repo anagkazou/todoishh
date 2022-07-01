@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import featherIcon from "../../../assets/svg/feather-sprite.svg";
+import featherIcon from "assets/svg/feather-sprite.svg";
 const colours = [
   {
     name: "Berry Red",
@@ -82,10 +81,7 @@ const colours = [
     hex: "#ccac93",
   },
 ];
-export const SetProjectColourDropdown = ({ projectColour, setProjectColour }) => {
-  const [selectedColour, setSelectedColour] = useState(projectColour);
-
-
+export const SetProjectColourDropdown = ({ setProjectColour }) => {
   return (
     <div className="add-project__set-selected-color">
       <div className="add-project__set-selected-color--option">

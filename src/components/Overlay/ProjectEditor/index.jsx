@@ -8,7 +8,7 @@ import { db } from "_firebase";
 import { SetProjectColourDropdown } from "./set-project-colour";
 import "./styles/add-project.scss";
 import "./styles/light.scss";
-export const AddProject = ({ closeOverlay, isEdit, projectToEdit }) => {
+export const ProjectEditor = ({ closeOverlay, isEdit, projectToEdit }) => {
   const { currentUser } = useAuth();
   const [projectName, setprojectName] = useState(isEdit && projectToEdit.name);
   const [projectColour, setProjectColour] = useState(

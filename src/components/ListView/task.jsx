@@ -1,14 +1,12 @@
-import featherIcon from "assets/svg/feather-sprite.svg";
-import { collatedTasksExist, getProjectHex, getProjectInfo, getProjectTitle, getTitle } from "../../utils";
 import { TaskCheckbox } from "components/Checkbox";
-import moment from "moment";
-import { useSelectedProjectValue } from "context/selected-project-context";
 import { OptionsButton } from "components/MenuButton";
 import { TaskDate } from "components/task-date";
 import { TaskProject } from "components/TaskProject";
-import { useParams } from "react-router-dom";
 import { useOverlayContextValue } from "context";
 import { useSelectedProject } from "hooks";
+import moment from "moment";
+import { useParams } from "react-router-dom";
+import { getProjectInfo, getProjectTitle } from "../../utils";
 export const Task = ({ name, task, projects }) => {
   moment.defaultFormat = "DD-MM-YYYY";
   const { setShowDialog, setDialogProps } = useOverlayContextValue();

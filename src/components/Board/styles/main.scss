@@ -7,8 +7,11 @@
     display: flex;
     flex-direction: row;
     padding-bottom: 4rem;
+    scrollbar-width: none;
   }
-
+  &__wrapper::-webkit-scrollbar {
+    display: none;
+  }
   &-column {
     &__title {
       font-size: 13px;

@@ -1,6 +1,6 @@
 import { useProjects } from "hooks";
 import { Droppable } from "react-beautiful-dnd";
-import { AddTask } from "../Add-Task";
+import { TaskEditor } from "../Add-Task";
 import { BoardTask } from "./board-task";
 import { useTaskEditorContextValue } from "context";
 export const BoardColumn = ({ column, tasks }) => {
@@ -15,14 +15,14 @@ export const BoardColumn = ({ column, tasks }) => {
             {tasks.map((task, index) => (
               <>
                 {taskEditorToShow != task.taskId && <BoardTask key={task.taskId} task={task} index={index} column={column} />}
-                {taskEditorToShow == task.taskId && <AddTask taskId={task.taskId} task={task} projects={projects} isEdit />}
+                {taskEditorToShow == task.taskId && <TaskEditor taskId={task.taskId} task={task} projects={projects} isEdit />}
               </>
             ))}
             {provided.placeholder}
           </div>
         )}
       </Droppable>
-      <AddTask column={column} />
+      <TaskEditor column={column} />
     </div>
   );
 };

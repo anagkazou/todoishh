@@ -13,7 +13,7 @@ import { SetNewTaskSchedule } from "./set-new-task-schedule";
 import "./styles/add-task.scss";
 import "./styles/light.scss";
 
-export const AddTask = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
+export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const params = useParams();
   const { defaultGroup, projectId } = params;
   const [schedule, setSchedule] = useState({ day: "", date: "" });

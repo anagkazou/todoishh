@@ -2,7 +2,7 @@ export const icebreakerTasks = [
   {
     name: "Start your own project! 🚀",
     date: "",
-    projectId: "00000abc",
+    projectId: "welcome",
     taskId: "icebreaker_1",
     boardStatus: "TODO",
     completed: false,
@@ -10,7 +10,7 @@ export const icebreakerTasks = [
   {
     name: "Schedule tasks 📅 ",
     date: "",
-    projectId: "00000abc",
+    projectId: "welcome",
     taskId: "icebreaker_2",
     boardStatus: "TODO",
     completed: false,
@@ -18,7 +18,7 @@ export const icebreakerTasks = [
   {
     name: "Get organized anywhere!",
     date: "",
-    projectId: "00000abc",
+    projectId: "welcome",
     taskId: "icebreaker_3",
     boardStatus: "TODO",
     completed: false,
@@ -26,7 +26,7 @@ export const icebreakerTasks = [
   {
     name: "View projects as lists or boards",
     date: "",
-    projectId: "00000abc",
+    projectId: "welcome",
     taskId: "icebreaker_4",
     boardStatus: "TODO",
     completed: false,
