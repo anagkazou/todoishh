@@ -1,17 +1,15 @@
-import { useAuth } from "hooks";
 import featherIcon from "assets/svg/feather-sprite.svg";
-import { useThemeContextValue, useOverlayContextValue } from "context";
-import "./styles/main.scss";
+import { useThemeContextValue } from "context";
+import { useAuth } from "hooks";
 import "./styles/light.scss";
-import { getAuth, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import "./styles/main.scss";
 
 export const UserOptions = ({ closeOverlay, xPosition, yPosition }) => {
   const { currentUser, signout } = useAuth();
   const { displayName, email } = currentUser || {};
   const formatedDisplayName = displayName?.replace(" ", "+") || null;
   const { isLight, setIsLight } = useThemeContextValue();
-  const navigate = useNavigate();
+
   const themeToggleHandler = (event) => {
     setIsLight(!isLight);
     event.stopPropagation();
@@ -21,11 +19,12 @@ export const UserOptions = ({ closeOverlay, xPosition, yPosition }) => {
     event.preventDefault();
     signout();
   };
+
   return (
     <div className="option__overlay" onClick={(e) => closeOverlay(e)}>
       <div
         className="user-options"
-        style={{ top: `${yPosition + 40}px`, left: `${xPosition - 180}px` }}
+        style={{ top: `${yPosition + 40}px`, right: `${window.innerWidth > 900 ? 42 : 12}px` }}
         onClick={(event) => event.stopPropagation()}
       >
         <ul className="user-options__list">

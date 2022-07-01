@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) => {
     signOut(userAuth)
       .then(() => {
         setCurrentUser(null);
-       // localStorage.removeItem("userAuth");
+        localStorage.removeItem("userAuth");
         console.log("user removed!!!");
       })
       .finally(() => navigate("/"));
