@@ -20,7 +20,6 @@ export const UserOptions = ({ closeOverlay, xPosition, yPosition }) => {
   const handleLogout = (event) => {
     event.preventDefault();
     signout();
-    navigate("/");
   };
   return (
     <div className="option__overlay" onClick={(e) => closeOverlay(e)}>

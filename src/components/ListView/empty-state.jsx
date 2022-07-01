@@ -77,9 +77,8 @@ export const EmptyState = () => {
 
       {getEmptyStateText()}
       <button
-      className="empty-state__button"
+        className="empty-state__button"
         onClick={(e) => {
-          e.preventDefault();
           setTaskEditorToShow("NEW");
         }}
       >

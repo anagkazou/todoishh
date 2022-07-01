@@ -57,14 +57,13 @@ export const AuthProvider = ({ children }) => {
   const signout = () => {
     const userAuth = getAuth();
 
-    signOut(userAuth).then(() => {
-      setCurrentUser(null);
-
-      localStorage.removeItem("userAuth");
-      navigate("/");
-
-      console.log("user removed!!!");
-    });
+    signOut(userAuth)
+      .then(() => {
+        setCurrentUser(null);
+       // localStorage.removeItem("userAuth");
+        console.log("user removed!!!");
+      })
+      .finally(() => navigate("/"));
   };
 
   useEffect(() => {

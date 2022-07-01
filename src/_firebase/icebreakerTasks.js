@@ -23,4 +23,12 @@ export const icebreakerTasks = [
     boardStatus: "TODO",
     completed: false,
   },
+  {
+    name: "View projects as lists or boards",
+    date: "",
+    projectId: "00000abc",
+    taskId: "icebreaker_4",
+    boardStatus: "TODO",
+    completed: false,
+  },
 ];
