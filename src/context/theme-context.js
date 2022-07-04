@@ -4,7 +4,7 @@ export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
   const theme = localStorage.getItem("todoish_theme");
-  const [isLight, setIsLight] = useState(theme == "DARK" ? false : true);
+  const [isLight, setIsLight] = useState(theme === "DARK" ? false : true);
 
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 
