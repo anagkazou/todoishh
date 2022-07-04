@@ -1,5 +1,5 @@
 import { ReactComponent as ScheduleIcon } from "assets/svg/scheduler.svg";
-import { SetNewTaskSchedulePopper } from "components/Dropdowns/set-new-task-schedule-popper";
+import { SetNewTaskSchedulePopper } from "components/dropdowns/set-new-task-schedule-popper";
 import { useOverlayContextValue } from "context";
 import { useState } from "react";
 export const SetNewTaskSchedule = ({ isQuickAdd, setSchedule, schedule }) => {
