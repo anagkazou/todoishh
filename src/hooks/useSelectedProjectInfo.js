@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { db } from "_firebase";
 
 export const useSelectedProjectInfo = (projectId) => {
-  const { currentUser } = useAuth();
   const [projectInfo, setProjectInfo] = useState();
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     if (projectId) {

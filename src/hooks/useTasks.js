@@ -12,8 +12,7 @@ export const useTasks = () => {
 
   const { currentUser } = useAuth();
   const [tasks, setTasks] = useState([]);
-  const [importantTasks, setImportantTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -51,5 +50,5 @@ export const useTasks = () => {
 
     return unsubscribe;
   }, [selectedProject, currentUser]);
-  return { setTasks, tasks, importantTasks, completedTasks, loading };
+  return { setTasks, tasks, loading };
 };

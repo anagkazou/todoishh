@@ -15,7 +15,6 @@ export const TaskList = () => {
   // const { tasks } = useTasks(selectedProject.selectedProjectId ? selectedProject.selectedProjectId : selectedProject.selectedProjectName);
   const { projects } = useProjects();
   const { taskEditorToShow } = useTaskEditorContextValue();
-  console.log("gggggggggggg", taskEditorToShow);
   return (
     <div className="task-list__wrapper">
       <ViewHeader />

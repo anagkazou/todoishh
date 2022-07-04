@@ -17,7 +17,6 @@ export const OptionsButton = ({ taskId, targetIsProject, targetIsTask, project, 
       )
     );
     setShowDialog("MENU_LIST");
-    console.log("ELEMENTPOSITION", elementPosition);
   };
 
   return (

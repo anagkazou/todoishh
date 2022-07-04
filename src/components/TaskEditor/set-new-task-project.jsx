@@ -16,7 +16,6 @@ export const SetNewTaskProject = ({ isQuickAdd, project, closeOverlay, xPosition
   const [parentPosition, setParentPosition] = useState({});
 
   useEffect(() => {
-    console.log('PROJECT333', project);
     if (!project.defaultProject) {
       setPopupSelectedProject(project);
     } else {
@@ -27,7 +26,6 @@ export const SetNewTaskProject = ({ isQuickAdd, project, closeOverlay, xPosition
     setParentPosition(parentPosition);
     setShowPopup(true);
 
-    console.log("PARENTPOS", parentPosition);
   };
   return (
     <div

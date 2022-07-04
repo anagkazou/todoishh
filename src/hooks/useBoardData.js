@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 
 export const useBoardData = (selectedProject) => {
   const { tasks } = useTasks(selectedProject.selectedProjectId ?? selectedProject.selectedProjectName);
-  // const { tasks } = useTasks(selectedProject.selectedProjectId ? selectedProject.selectedProjectId : selectedProject.selectedProjectName);
   const data = {};
   const [boardData, setBoardData] = useState();
   let getColumnTasks = (column) => {
-    return tasks.filter((task) => task.boardStatus == column);
+    return tasks.filter((task) => task.boardStatus === column);
   };
   useEffect(() => {
     data.tasks = Object.assign({}, tasks);

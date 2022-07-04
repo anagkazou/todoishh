@@ -1,25 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { LoginSignupForm } from "./login-signup-form";
-import featherIcon from "assets/svg/feather-sprite.svg";
 import { ReactComponent as EyeOn } from "assets/svg/eye-on.svg";
-import { ReactComponent as EyeOff } from "assets/svg/eye-off.svg";
-import { Spinner } from "components/Spinner";
-import { db } from "_firebase";
-import { useAuth } from "hooks";
-import { collection, doc, getDocs, query, where } from "firebase/firestore";
 import { FeatherIcons } from "assets/svg/feather-icons";
+import featherIcon from "assets/svg/feather-sprite.svg";
+import { Spinner } from "components/Spinner";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useAuth } from "hooks";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { db } from "_firebase";
+import { LoginSignupForm } from "./login-signup-form";
 
 export const SignupForm = () => {
   const [inStepTwo, setInStepTwo] = useState(false);
   const [inStepOne, setInStepOne] = useState(true);
-  const [verifyingEmail, setVerifyingEmail] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formState, setFormState] = useState({ email: "", password: "", name: "" });
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
   const [nameHasError, setNameHasError] = useState(false);
   const [passwordHasError, setPasswordHasError] = useState(false);
-  const [showGlobalError, setShowGlobalError] = useState(false);
   const [globalErrorMessage, setGlobalErrorMessage] = useState("");
 
   const { signupWithEmail } = useAuth();
@@ -37,22 +35,19 @@ export const SignupForm = () => {
       ...formState,
       [event.target.name]: value,
     });
-    console.log("formstate:", formState);
   };
 
   const verifyEmail = async (event) => {
-    event && event.preventDefault();
+    event?.preventDefault();
     const emailRegex = /\S+@\S+\.\S+/;
     if (emailRegex.test(formState.email)) {
       setEmailIsValid(true);
-      setVerifyingEmail(true);
+      setLoading(true);
       const userRef = query(collection(db, "user"), where("email", "==", formState.email));
       const userSnap = await getDocs(userRef);
-      console.log("usersnap", userSnap);
-      //todo: Configure gloabal EMail error message
       if (userSnap.metadata.fromCache) {
         setEmailIsValid(false);
-        setVerifyingEmail(false);
+        setLoading(false);
         setErrorMessage("Temporary error, try again later");
         setGlobalErrorMessage("Temporary error, try again later");
         return;
@@ -61,10 +56,9 @@ export const SignupForm = () => {
         setEmailIsValid(false);
         setErrorMessage("Your email is already registered with us");
         setGlobalErrorMessage("Your email is already registered with us");
-        setVerifyingEmail(false);
+        setLoading(false);
       } else {
-        setVerifyingEmail(false);
-
+        setLoading(false);
         setInStepOne(false);
         setInStepTwo(true);
       }
@@ -88,7 +82,6 @@ export const SignupForm = () => {
     }
 
     signupWithEmail(formState);
-    console.log("DONEEEEEEEEEE", formState);
   };
 
   const backlinkHandler = (event) => {
@@ -96,9 +89,6 @@ export const SignupForm = () => {
     setInStepTwo(false);
     setInStepOne(true);
   };
-
-  const storedUser = localStorage.getItem("userData");
-  const navigate = useNavigate();
 
   return (
     <div className={`signup ${inStepTwo ? "in_step_two" : ""}${inStepOne ? "in_step_one" : ""}`}>
@@ -139,9 +129,9 @@ export const SignupForm = () => {
               />
             </div>
 
-            <button className="auth-button submit-button" disabled={verifyingEmail ? true : false} onClick={(event) => verifyEmail(event)}>
-              <span>Sign up with Email</span>
-              {verifyingEmail && <Spinner light />}
+            <button className="auth-button submit-button" disabled={loading ? true : false} onClick={(event) => verifyEmail(event)}>
+              Sign up with Email
+              {loading && <Spinner light />}
             </button>
 
             <hr />
@@ -225,6 +215,7 @@ export const SignupForm = () => {
             <div className="hint-text">Your password must be at least 8 characters long. Avoid common words or patterns.</div>
             <button className="auth-button submit-button" disabled={false} onClick={(event) => signUpWithEmailAddress(event)}>
               Sign up now
+              {loading && <Spinner light />}
             </button>
 
             <hr />

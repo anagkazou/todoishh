@@ -172,7 +172,7 @@
     border: 1px solid transparent;
     font-weight: 700;
     position: relative;
-    display: block;
+    display: flex;
 
     &:disabled {
       opacity: 0.7;

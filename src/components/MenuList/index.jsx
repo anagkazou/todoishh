@@ -12,9 +12,6 @@ import "./styles/menu-list.scss";
 
 export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsProject, projectId, targetIsTask, taskIsImportant }) => {
   const { currentUser } = useAuth();
-  const params = useParams();
-  const { projects } = useProjects();
-  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);
   const navigate = useNavigate();
   const { setTaskEditorToShow } = useTaskEditorContextValue();
   const { setShowDialog, showDialog, setDialogProps } = useOverlayContextValue();

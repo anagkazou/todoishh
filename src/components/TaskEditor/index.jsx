@@ -91,7 +91,6 @@ export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) =
     if (defaultGroup === "Today") {
       setSchedule({ day: "Today", date: moment().format("DD-MM-YYYY") });
     } else if (isEdit) {
-      console.log("THE DATE!", task);
       moment.defaultFormat = "DD-MM-YYYY";
       setSchedule({ day: task.date.length > 1 ? moment(task.date, moment.defaultFormat).format("DD MMM  ") : task.date, date: task.date });
     }

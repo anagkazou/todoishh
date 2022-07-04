@@ -74,7 +74,6 @@ export const Overlay = () => {
         return <ProjectEditor isEdit projectToEdit={dialogProps.project} closeOverlay={closeOverlay} />;
 
       case "CONFIRM_DELETE":
-        console.log("OPOPOPOPOPOP");
         return <ConfrimDeleteProject closeOverlay={closeOverlay} projectId={dialogProps.projectId} />;
     }
   };

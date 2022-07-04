@@ -61,7 +61,6 @@ export const AuthProvider = ({ children }) => {
       .then(() => {
         setCurrentUser(null);
         localStorage.removeItem("userAuth");
-        console.log("user removed!!!");
       })
       .finally(() => navigate("/"));
   };
@@ -77,7 +76,6 @@ export const AuthProvider = ({ children }) => {
             id: snapshot.id,
           };
           setCurrentUser(user);
-          console.log("USER", user);
 
           localStorage.setItem("userAuth", JSON.stringify(user));
         });

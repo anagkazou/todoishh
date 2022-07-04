@@ -21,19 +21,19 @@ export const useTasksCount = (isDefaultGroup, projectId, name) => {
         collection(db, "user", `${currentUser && currentUser.id}/tasks`),
         where("date", "==", moment().format("DD-MM-YYYY"), where("completed", "==", false))
       );
-    } else if (isDefaultGroup && name == "Inbox") {
+    } else if (isDefaultGroup && name === "Inbox") {
       q = query(
         collection(db, "user", `${currentUser && currentUser.id}/tasks`),
         where("projectId", "==", ""),
         where("completed", "==", false)
       );
-    } else if (isDefaultGroup && name == "Important") {
+    } else if (isDefaultGroup && name === "Important") {
       q = query(
         collection(db, "user", `${currentUser && currentUser.id}/tasks`),
         where("important", "==", true),
         where("completed", "==", false)
       );
-    } else if (isDefaultGroup && name == "Scheduled") {
+    } else if (isDefaultGroup && name === "Scheduled") {
       q = query(collection(db, "user", `${currentUser && currentUser.id}/tasks`), where("date", "!=", ""), where("completed", "==", false));
     }
     const unsubscribe = onSnapshot(q, (querySnapshot) => {

@@ -11,10 +11,8 @@ export const Task = ({ name, task, projects }) => {
   moment.defaultFormat = "DD-MM-YYYY";
   const { setShowDialog, setDialogProps } = useOverlayContextValue();
 
-  //Todo: change this to custom hook: 'useSelectedProject
   const { defaultGroup, projectId } = useParams();
 
-  //Todo: change this to 'useSelectedProject' custom hook
   const params = useParams();
   //const { projects } = useProjects();
   const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);
@@ -36,7 +34,6 @@ export const Task = ({ name, task, projects }) => {
     }
     setDialogProps(Object.assign({ elementPosition, taskIsImportant: task.taskIsImportant }, { taskId: task.taskId, targetIsTask: true }));
     setShowDialog("MENU_LIST");
-    console.log("ELEMENTPOSITION", elementPosition);
   };
   return (
     <div className="task" onClick={(event) => menuTriggerHandler(event, event.currentTarget.getBoundingClientRect())}>

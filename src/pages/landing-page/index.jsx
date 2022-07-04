@@ -1,14 +1,9 @@
-import "./main.scss";
-import { useEffect } from "react";
-import { ReactComponent as Logo } from "assets/svg/logo.svg";
-import { ReactComponent as LogoMobile } from "assets/svg/logo-mobile.svg";
-import { Link } from "react-router-dom";
 import illustration from "assets/svg/landing-illustration.webp";
-import { useAuth } from "hooks";
+import { ReactComponent as LogoMobile } from "assets/svg/logo-mobile.svg";
+import { ReactComponent as Logo } from "assets/svg/logo.svg";
+import { Link } from "react-router-dom";
+import "./main.scss";
 export const LandingPage = () => {
-  const { currentUser } = useAuth();
-  const storedUser = localStorage.getItem("userData");
-
   return (
     <main className="landing-page">
       <header className="intro__header">
@@ -49,13 +44,6 @@ export const LandingPage = () => {
               </Link>
             </div>
           </div>
-          {/* <div className="intro__nav--group">
-            <ul>
-              <li >Log in </li>
-              <li >                <Link className="intro__nav--item intro__nav--link" to="/">Features</Link>
-</li>
-            </ul>
-          </div> */}
         </nav>
       </header>
 

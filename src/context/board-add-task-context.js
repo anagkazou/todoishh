@@ -5,9 +5,7 @@ export const TaskEditorContext = createContext();
 export const TaskEditorContextProvider = ({ children }) => {
   const [taskEditorToShow, setTaskEditorToShow] = useState();
 
-  useEffect(() => {
-    console.log("fffffffffffffffffff", taskEditorToShow);
-  }, [taskEditorToShow]);
+  useEffect(() => {}, [taskEditorToShow]);
 
   return <TaskEditorContext.Provider value={{ taskEditorToShow, setTaskEditorToShow }}>{children}</TaskEditorContext.Provider>;
 };

@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { FeatherIcons } from "assets/svg/feather-icons";
-
 import { ReactComponent as EyeOn } from "assets/svg/eye-on.svg";
-import { ReactComponent as EyeOff } from "assets/svg/eye-off.svg";
-import { Link } from "react-router-dom";
+import { FeatherIcons } from "assets/svg/feather-icons";
 import { useAuth } from "hooks";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Spinner } from "components/Spinner";
 export const LoginForm = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [emailIsValid, setEmailIsValid] = useState(true);
@@ -27,6 +26,7 @@ export const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setAuthenticating(true);
     const { email, password } = formState;
     const emailRegex = /\S+@\S+\.\S+/;
     if (emailRegex.test(email)) {
@@ -39,12 +39,18 @@ export const LoginForm = () => {
 
     if (emailIsValid) {
       signinWithEmail(email, password).catch((error) => {
-        if (error.code == "auth/wrong-password") {
+        console.log("ERROR", error);
+        if (error.code === "auth/wrong-password") {
           setErrorMessage("Wrong email or password");
+          setShowDefaultErrorMessage(true);
+        }
+        if (error.code === "auth/user-not-found") {
+          setErrorMessage("Invalid user");
           setShowDefaultErrorMessage(true);
         }
       });
     }
+    setAuthenticating(false);
   };
 
   return (
@@ -91,6 +97,7 @@ export const LoginForm = () => {
         </div>
         <button className="auth-button submit-button" onClick={(e) => handleSubmit(e)}>
           Log in
+          {authenticating && <Spinner light />}
         </button>
 
         <hr />
