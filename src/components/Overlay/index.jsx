@@ -1,6 +1,6 @@
 import { ConfrimDeleteProject } from "components/ConfirmDeleteProject";
-import { SetNewTaskProjectPopper } from "components/DropDowns/set-new-task-project-popper";
-import { SetNewTaskSchedulePopper } from "components/DropDowns/set-new-task-schedule-popper";
+import { SetNewTaskProjectPopper } from "components/Dropdowns/set-new-task-project-popper";
+import { SetNewTaskSchedulePopper } from "components/Dropdowns/set-new-task-schedule-popper";
 import { MenuList } from "components/MenuList";
 import { UserOptions } from "components/UserOption";
 import { ViewOptions } from "components/ViewOptions";
