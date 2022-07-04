@@ -1,5 +1,5 @@
 import { ReactComponent as ScheduleIcon } from "assets/svg/scheduler.svg";
-import { SetNewTaskSchedulePopup } from "components/dropdowns/set-new-task-schedule-popup";
+import { SetNewTaskSchedulePopper } from "components/DropDowns/set-new-task-schedule-popper";
 import { useOverlayContextValue } from "context";
 import { useState } from "react";
 export const SetNewTaskSchedule = ({ isQuickAdd, setSchedule, schedule }) => {
@@ -45,7 +45,7 @@ export const SetNewTaskSchedule = ({ isQuickAdd, setSchedule, schedule }) => {
         {schedule?.day === "" ? "Due date" : schedule?.day}
       </div>
       {showPopup && (
-        <SetNewTaskSchedulePopup
+        <SetNewTaskSchedulePopper
           isQuickAdd={isQuickAdd}
           setShowPopup={setShowPopup}
           setSchedule={setSchedule}

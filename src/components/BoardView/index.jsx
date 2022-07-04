@@ -30,9 +30,7 @@ export const Board = () => {
     }
 
     const column = boardState.columns[source.droppableId];
-
     const newColumnTasks = [...column.columnTasks];
-
     const start = boardState.columns[source.droppableId];
     const finish = boardState.columns[destination.droppableId];
     const taskWithDraggableId = Object.values(boardState.tasks).find((task) => task.taskId == draggableId);
@@ -59,7 +57,6 @@ export const Board = () => {
       setBoardState(newState);
       return;
     }
-
     const startTaskIds = Array.from(start.columnTasks);
     startTaskIds.splice(source.index, 1);
     const newStart = {

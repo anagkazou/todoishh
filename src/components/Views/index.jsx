@@ -1,5 +1,5 @@
 import { Content } from "components/Content";
-import { DashBoardRoutes } from "components/DashBoardRoutes";
+import { DashBoardRoutes } from "components/AuthenticatedRoutes";
 import { Layout } from "components/Layout";
 import { UnauthenticatedRoutes } from "components/UnauthenticatedRoutes";
 import { ProjectsContextProvider } from "context";

@@ -1,6 +1,5 @@
-import featherIcon from "../../assets/svg/feather-sprite.svg";
 import { ReactComponent as PlusIcon } from "assets/svg/plus.svg";
-import { useOverlayContextValue } from "../../context/overlay-context";
+import { useOverlayContextValue } from "context";
 export const QuickAddTask = () => {
   const { setShowDialog } = useOverlayContextValue();
 

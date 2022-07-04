@@ -41,7 +41,7 @@ export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) =
         taskId: taskId,
         completed: false,
         boardStatus: "TODO",
-        important: false,
+        important: defaultGroup === "Important" ? true : false,
         ...(!projectIsList && column && { boardStatus: column?.id }),
       });
     } catch (error) {

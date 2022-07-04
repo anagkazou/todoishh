@@ -1,5 +1,5 @@
 import { Avatar } from "./avatar";
-import { Github } from "./github";
+import { Info } from "./github";
 import { HamburgerButton } from "./hamburger";
 import { HomeButton } from "./home";
 import "./light.scss";
@@ -15,8 +15,7 @@ export const Header = (props) => {
       </div>
       <div className="header__right">
         <QuickAddTask />
-        {/* //Todo: change component name from github to info */}
-        <Github />
+        <Info />
         <Notifications />
         <Avatar />
       </div>

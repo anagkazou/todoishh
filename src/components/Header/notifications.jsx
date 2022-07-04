@@ -1,4 +1,3 @@
-import featherIcon from "../../assets/svg/feather-sprite.svg";
 import { ReactComponent as NotificationIcon } from "assets/svg/notification.svg";
 export const Notifications = () => {
   return (

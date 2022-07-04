@@ -1,7 +1,7 @@
 import { useTaskEditorContextValue } from "context";
 import { useProjects } from "hooks";
 import { Droppable } from "react-beautiful-dnd";
-import { TaskEditor } from "../Add-Task";
+import { TaskEditor } from "../TaskEditor";
 import { BoardTask } from "./board-task";
 export const BoardColumn = ({ column, tasks }) => {
   const { projects } = useProjects();

@@ -1,6 +1,6 @@
 import { ConfrimDeleteProject } from "components/ConfirmDeleteProject";
-import { SetNewTaskProjectPopper } from "components/dropdowns/set-new-task-project-popper";
-import { SetNewTaskSchedulePopup } from "components/dropdowns/set-new-task-schedule-popup";
+import { SetNewTaskProjectPopper } from "components/DropDowns/set-new-task-project-popper";
+import { SetNewTaskSchedulePopper } from "components/DropDowns/set-new-task-schedule-popper";
 import { MenuList } from "components/MenuList";
 import { UserOptions } from "components/UserOption";
 import { ViewOptions } from "components/ViewOptions";
@@ -51,7 +51,7 @@ export const Overlay = () => {
         );
       case "SET_SCHEDULE":
         return (
-          <SetNewTaskSchedulePopup
+          <SetNewTaskSchedulePopper
             closeOverlay={closeOverlay}
             setSchedule={dialogProps.setSchedule}
             projectId={dialogProps.projectId}

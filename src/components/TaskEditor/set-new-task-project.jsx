@@ -4,7 +4,7 @@ import { useOverlayContextValue } from "context";
 import { useProjects, useSelectedProject } from "hooks";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { SetNewTaskProjectPopper } from "../dropdowns/set-new-task-project-popper";
+import { SetNewTaskProjectPopper } from "components/DropDowns/set-new-task-project-popper";
 export const SetNewTaskProject = ({ isQuickAdd, project, closeOverlay, xPosition, yPosition, setProject }) => {
   const params = useParams();
   // const { selectedProject } = useSelectedProjectValue(params);

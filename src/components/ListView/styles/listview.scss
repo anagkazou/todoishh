@@ -28,9 +28,9 @@
     margin: 0 auto;
   }
   &__checkbox {
-    width: 16px;
+    width: 18px;
     border: grey 1px solid;
-    height: 16px;
+    height: 17px;
     border-radius: 50%;
     display: flex;
     place-items: center;
@@ -119,17 +119,17 @@
 }
 
 .date__today {
-  color: #25b84c ;
+  color: #25b84c !important;
 }
 .date__tomorrow {
-  color: #ff9a14 ;
+  color: #ff9a14 !important;
 }
 .date__overdue {
-  color: #ff7066 ;
+  color: #ff7066 !important;
 }
 .date__next-week {
-  color: #a970ff;
+  color: #a970ff !important;
 }
 .date__weekend {
-  color: #5297ff;
+  color: #5297ff !important;
 }

@@ -8,6 +8,9 @@
   .task__text {
     color: inherit;
   }
+  .task__date {
+    color: unset;
+  }
 
   &__project-info {
     color: #555;
@@ -26,20 +29,20 @@
 
 .light {
   .date__today {
-    color: #058527;
+    color: #058527 !important;
   }
   .date__tomorrow {
-    color: #ad6200;
+    color: #ad6200 !important;
   }
 
   .date__next-week {
-    color: #692fc2;
+    color: #692fc2 !important;
   }
   .date__weekend {
-    color: #246fe0;
+    color: #246fe0 !important;
   }
 
   .date__overdue {
-    color: #dd4b39;
+    color: #dd4b39 !important;
   }
 }

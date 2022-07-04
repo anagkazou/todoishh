@@ -1,4 +1,4 @@
-import { TaskEditor } from "components/Add-Task";
+import { TaskEditor } from "components/TaskEditor";
 import { ViewHeader } from "components/ViewHeader";
 import { useTaskEditorContextValue } from "context";
 import { useProjects, useTasks } from "hooks";
@@ -15,7 +15,7 @@ export const TaskList = () => {
   // const { tasks } = useTasks(selectedProject.selectedProjectId ? selectedProject.selectedProjectId : selectedProject.selectedProjectName);
   const { projects } = useProjects();
   const { taskEditorToShow } = useTaskEditorContextValue();
-console.log('gggggggggggg', taskEditorToShow);
+  console.log("gggggggggggg", taskEditorToShow);
   return (
     <div className="task-list__wrapper">
       <ViewHeader />
@@ -29,7 +29,7 @@ console.log('gggggggggggg', taskEditorToShow);
           );
         })}
 
-      {defaultGroup !== "Important" && <TaskEditor projects={projects} />}
+      <TaskEditor projects={projects} />
       {tasks.length ? null : <EmptyState />}
     </div>
   );

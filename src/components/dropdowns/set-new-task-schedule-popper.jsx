@@ -8,7 +8,7 @@ import "./light.scss";
 import "./main.scss";
 
 
-export const SetNewTaskSchedulePopup = ({ isQuickAdd, setShowPopup, setSchedule, closeOverlay, xPosition, yPosition, parentPosition }) => {
+export const SetNewTaskSchedulePopper = ({ isQuickAdd, setShowPopup, setSchedule, closeOverlay, xPosition, yPosition, parentPosition }) => {
   const setNext7days = () => {
     setSchedule({ day: "Next week", date: moment().add(7, "days").format("DD-MM-YYYY") });
     isQuickAdd ? setShowPopup(false) : closeOverlay();

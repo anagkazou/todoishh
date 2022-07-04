@@ -1,15 +1,11 @@
-import { Board } from "components/Board/index";
+import { Board } from "components/BoardView/index";
 import { TaskList } from "components/ListView";
-import { useProjects, useSelectedProject, useSelectedProjectInfo } from "hooks";
+import { useSelectedProjectInfo } from "hooks";
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./styles/content.scss";
 import "./styles/light.scss";
 export const Content = () => {
-  const params = useParams();
-  const { projects } = useProjects();
-  const { setSelectedProject, selectedProject } = useSelectedProject(params, projects);  const { selectedProjectName, defaultProject } = selectedProject;
-
   const { projectId, defaultGroup } = useParams();
   const projectInfo = useSelectedProjectInfo(projectId);
   const currentView = projectInfo && projectInfo[0]?.projectIsList;

@@ -1,10 +1,12 @@
-.light .menu__trigger{
-    svg{
-        stroke: grey;
-    }
+.light .menu__trigger {
+  svg {
+    stroke: #333;
+  }
 
-    &:hover{
-        background-color: #eee;
-
+  &:hover {
+    background-color: #eee;
+    svg {
+      stroke: #333;
     }
+  }
 }
