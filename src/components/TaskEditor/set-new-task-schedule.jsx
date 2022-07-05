@@ -6,26 +6,25 @@ export const SetNewTaskSchedule = ({ isQuickAdd, setSchedule, schedule }) => {
   const { showDialog, setShowDialog, setDialogProps } = useOverlayContextValue();
   const [showPopup, setShowPopup] = useState(false);
   const [parentPosition, setParentPosition] = useState({});
-  const [selectedSchedule, setSelectedSchedule] = useState(schedule);
   const showQUickAddDropDown = (parentPosition) => {
     setParentPosition(parentPosition);
     setShowPopup(true);
   };
 
   const getDateStyle = () => {
-    if (schedule?.day == "Today") {
+    if (schedule?.day === "Today") {
       let day = "date__today";
       return day;
     }
-    if (schedule?.day == "Tomorrow") {
+    if (schedule?.day === "Tomorrow") {
       let day = "date__tomorrow";
       return day;
     }
-    if (schedule?.day == "Weekend") {
+    if (schedule?.day === "Weekend") {
       let day = "date__weekend";
       return day;
     }
-    if (schedule?.day == "Next week") {
+    if (schedule?.day === "Next week") {
       let day = "date__next-week";
       return day;
     }

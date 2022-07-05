@@ -1,9 +1,10 @@
-import { ReactComponent as EyeOn } from "assets/svg/eye-on.svg";
+import { ReactComponent as EyeOpen } from "assets/svg/eye-off.svg";
+import { ReactComponent as EyeClosed } from "assets/svg/eye-on.svg";
 import { FeatherIcons } from "assets/svg/feather-icons";
+import { Spinner } from "components/Spinner";
 import { useAuth } from "hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Spinner } from "components/Spinner";
 export const LoginForm = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [emailIsValid, setEmailIsValid] = useState(true);
@@ -11,6 +12,7 @@ export const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [authenticating, setAuthenticating] = useState(false);
   const { signinWithEmail } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
   const onChangeHandler = (event) => {
     event.preventDefault();
@@ -83,15 +85,15 @@ export const LoginForm = () => {
           <div className="toggle_password">
             <input
               className="form_field_control"
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
-              placeholder=""
+              placeholder="Enter password"
               value={formState.password}
               onChange={(e) => onChangeHandler(e)}
             />
-            <span className="toggle" role="checkbox" tabIndex="0" aria-checked="false">
-              <EyeOn />
+            <span className="toggle" role="checkbox" tabIndex="0" aria-checked="false" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <EyeOpen /> : <EyeClosed />}
             </span>
           </div>
         </div>

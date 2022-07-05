@@ -1,11 +1,12 @@
-import { ReactComponent as EyeOn } from "assets/svg/eye-on.svg";
+import { ReactComponent as EyeOpen } from "assets/svg/eye-off.svg";
+import { ReactComponent as EyeClosed } from "assets/svg/eye-on.svg";
 import { FeatherIcons } from "assets/svg/feather-icons";
 import featherIcon from "assets/svg/feather-sprite.svg";
 import { Spinner } from "components/Spinner";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useAuth } from "hooks";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { db } from "_firebase";
 import { LoginSignupForm } from "./login-signup-form";
 
@@ -18,6 +19,8 @@ export const SignupForm = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [nameHasError, setNameHasError] = useState(false);
   const [passwordHasError, setPasswordHasError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [globalErrorMessage, setGlobalErrorMessage] = useState("");
 
   const { signupWithEmail } = useAuth();
@@ -201,14 +204,13 @@ export const SignupForm = () => {
                 <input
                   className={` form_field_control ${passwordHasError ? "has-error" : ""}`}
                   value={formState.password}
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   id="password"
-                  placeholder=""
                   onChange={(event) => onChangeHandler(event)}
                 />
-                <span className="toggle" role="checkbox">
-                  <EyeOn />
+                <span className="toggle" role="checkbox" onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <EyeOpen /> : <EyeClosed />}
                 </span>
               </div>
             </div>
