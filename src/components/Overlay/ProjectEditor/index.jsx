@@ -25,7 +25,7 @@ export const ProjectEditor = ({ closeOverlay, isEdit, projectToEdit }) => {
   const [selectedColour, setSelectedColour] = useState(projectColour);
   const projectId = generatePushId();
   const { setShowDialog } = useOverlayContextValue();
-  const [disableSubmit, setDisableSubmit] = useState(true);
+  const [disableSubmit, setDisableSubmit] = useState(isEdit ? false : true);
 
   const updateProjectHandler = async (e) => {
     e.preventDefault();
