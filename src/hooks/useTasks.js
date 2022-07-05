@@ -47,7 +47,6 @@ export const useTasks = () => {
         setTasks(result);
       }
     });
-
     return unsubscribe;
   }, [selectedProject, currentUser]);
   return { setTasks, tasks, loading };

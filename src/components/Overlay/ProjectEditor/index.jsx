@@ -45,6 +45,10 @@ export const ProjectEditor = ({ closeOverlay, isEdit, projectToEdit }) => {
 
   useEffect(() => {
     setSelectedColour(projectColour);
+
+    return () => {
+      setSelectedColour(null);
+    };
   }, [projectColour]);
 
   const addProjectHandler = async (e) => {
@@ -88,7 +92,7 @@ export const ProjectEditor = ({ closeOverlay, isEdit, projectToEdit }) => {
                 id="projectName"
                 maxLength={12}
                 minLength={2}
-                value={projectName}
+                value={projectName || ""}
                 onChange={(e) => handleChange(e)}
                 required
               />

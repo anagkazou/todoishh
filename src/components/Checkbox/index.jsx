@@ -7,6 +7,7 @@ export const TaskCheckbox = ({ taskId }) => {
 
   const completeTaskHandler = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
     try {
       const taskQuery = await query(collection(db, "user", `${currentUser && currentUser.id}/tasks`), where("taskId", "==", taskId));
       const taskDocs = await getDocs(taskQuery);

@@ -73,6 +73,20 @@
       border-bottom: #e44232 1px solid;
       background-color: #fafafa;
     }
+
+    &--cta {
+      color: #fff;
+      background-color: #e44232;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0;
+      font-family: "Graphik-semibold";
+      padding: 0 1rem;
+      min-height: 2.5rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .nav-logo {
@@ -111,7 +125,7 @@
     white-space: pre-line;
     text-align: center;
     @include respond(phone) {
-      padding-top: 13rem;
+      padding-top: 200px;
     }
     &--cta {
       color: #fff;
@@ -123,7 +137,7 @@
       padding: 0.2rem 1rem;
       min-height: 2.5rem;
       border-radius: 8px;
-      margin-block-start: 2rem;
+      margin-block-start: 10px;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -148,17 +162,19 @@
   }
 
   .hero-text {
-    font-size: 72px;
+    font-size: 3.25rem;
     line-height: 1.05;
     letter-spacing: -0.04em;
     font-weight: 600;
     text-align: center;
     font-family: "Graphik-semibold", sans-serif;
     color: #1f1f1f;
-    width: 40%;
+    //width: 40%;
     text-align: center;
     margin: auto;
-
+    max-inline-size: 46.8rem;
+    margin-block-end: 1rem;
+    letter-spacing: -0.02em;
     @include respond(tab-land) {
       width: 50%;
       font-size: 60px;
@@ -170,5 +186,19 @@
       font-size: 44px;
       width: 90%;
     }
+  }
+
+  .hero-text__sub {
+    line-height: 1.5;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-block-start: 0.83rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block-end: 1.5rem;
+    max-inline-size: 480px;
+    -webkit-margin-after: 24px;
+    color: #1f1f1f;
   }
 }
