@@ -39,7 +39,7 @@ export const LandingPage = () => {
               <Link className="intro__nav--item intro__nav--link" to="/signin">
                 Log in
               </Link>
-              <Link className="intro__nav--item intro__nav--cta" to="/signup">
+              <Link className="intro__nav--cta" to="/signup">
                 Start for free
               </Link>
             </div>

@@ -13,11 +13,23 @@ import { SetNewTaskSchedule } from "./set-new-task-schedule";
 import "./styles/add-task.scss";
 import "./styles/light.scss";
 
+const taskEditorPlaceholders = [
+  "Prepare for family lunch",
+  "Call Adenike",
+  "Renew Gym membership",
+  "Pickup kids from school",
+  "Design meeting by 10:30am",
+  "Standup by 9am",
+  "Task name",
+  "Finish Art project",
+];
+
+const randomPlaceholder = taskEditorPlaceholders[Math.floor(Math.random() * taskEditorPlaceholders.length)];
+
 export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) => {
   const params = useParams();
   const { defaultGroup, projectId } = params;
   const [schedule, setSchedule] = useState({ day: "", date: "" });
-
   const { projects } = useProjects();
   const { selectedProject, defaultState } = useSelectedProject(params, projects);
   const { projectIsList } = selectedProject;
@@ -143,7 +155,7 @@ export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) =
               required
               type="text"
               maxLength="30"
-              placeholder="e.g 'Renew gym subscription'"
+              placeholder={`e.g '${randomPlaceholder}'`}
             />
 
             <div className="add-task__attributes">
