@@ -10,7 +10,7 @@
   position: fixed;
   left: 0;
   z-index: 300;
-  transition: left linear 0.2s;
+  transition: left linear 0.1s;
   @include respond(tab-port) {
     padding-top: 60px;
   }
@@ -28,7 +28,7 @@
       width: 100%;
       height: 100vh;
       z-index: 299;
-      transition: display ease 0.2s;
+      transition: display ease 0.1s;
       .hide-sidebar & {
         display: none;
       }

@@ -7,7 +7,7 @@
   overflow-y: auto;
   padding-top: 4rem;
   margin-left: 284px;
-  transition: margin linear 0.2s;
+  transition: margin linear 0.1s;
   
   @include respond(tab-port) {
     margin-left: 0;
