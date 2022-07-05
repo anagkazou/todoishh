@@ -23,7 +23,7 @@ export const TaskList = () => {
           return (
             <div key={task.taskId}>
               {taskEditorToShow != task.taskId && <Task name={task.name} key={task.taskId} task={task} projects={projects} />}
-              {taskEditorToShow == task.taskId && <TaskEditor taskId={task.taskId} task={task} projects={projects} isEdit />}
+              {taskEditorToShow === task.taskId && <TaskEditor taskId={task.taskId} task={task} projects={projects} isEdit />}
             </div>
           );
         })}

@@ -6,7 +6,6 @@ import { useThemeContextValue } from "context";
 import { NavLink } from "react-router-dom";
 import { ProjectTasksCounts } from "./project-tasks-count";
 export const DefaultProjects = () => {
-  //todo:find out why this isnt destructuring
   const { isLight } = useThemeContextValue();
 
   return (

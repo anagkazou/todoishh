@@ -21,6 +21,7 @@
   box-shadow: 0 1px 4px 0 #00000014, 0 15px 50px 0 #00000099;
   & > .add-task__wrapper > form {
     margin-top: 0;
+    margin-bottom: 0;
   }
   @include respond(tab-port) {
     position: inherit;

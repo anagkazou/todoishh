@@ -15,13 +15,22 @@ export const SetNewTaskProject = ({ isQuickAdd, project, setProject }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [parentPosition, setParentPosition] = useState({});
 
+  const defaultProjectValue = { selectedProjectName: "Inbox", selectedProjectId: "", defaultProject: true };
   useEffect(() => {
     if (!project.defaultProject) {
       setPopupSelectedProject(project);
     } else {
-      setPopupSelectedProject({ selectedProjectName: "Inbox", selectedProjectId: "", defaultProject: true });
+      setPopupSelectedProject(defaultProjectValue);
     }
   }, [project]);
+  useEffect(() => {
+    if (!selectedProject.defaultProject) {
+      setProject(selectedProject);
+    } else {
+      setProject(defaultProjectValue);
+    }
+  }, [selectedProject]);
+
   const showQUickAddDropDown = (parentPosition) => {
     setParentPosition(parentPosition);
     setShowPopup(true);
@@ -40,7 +49,7 @@ export const SetNewTaskProject = ({ isQuickAdd, project, setProject }) => {
       {popupSelectedProject?.selectedProjectName === "Inbox" ? (
         <InboxIcon width="18px" height="18px" fill="#5297ff" />
       ) : (
-        <Dot color={`${project?.projectColour?.hex}`} width={17} height={17} />
+        <Dot color={`${popupSelectedProject?.projectColour?.hex}`} width={17} height={17} />
       )}
       <p className="set-new-task__project--name">{popupSelectedProject.selectedProjectName}</p>
       {showPopup && (
