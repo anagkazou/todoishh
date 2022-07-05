@@ -86,7 +86,7 @@ export const TaskEditor = ({ column, isQuickAdd, isEdit, task, closeOverlay }) =
       await updateDoc(taskDoc.ref, {
         name: taskName,
         date: schedule.date,
-        projectId: task.projectId,
+        projectId: project.selectedProjectId || task.projectId,
       });
     });
     setTaskEditorToShow("");

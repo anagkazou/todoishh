@@ -2,6 +2,7 @@ import { TaskEditor } from "components/TaskEditor";
 import { ViewHeader } from "components/ViewHeader";
 import { useTaskEditorContextValue } from "context";
 import { useProjects, useTasks } from "hooks";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { EmptyState } from "./empty-state";
 import "./styles/light.scss";
@@ -21,10 +22,10 @@ export const TaskList = () => {
       {tasks &&
         tasks.map((task) => {
           return (
-            <div key={task.taskId}>
+            <React.Fragment key={task.taskId}>
               {taskEditorToShow != task.taskId && <Task name={task.name} key={task.taskId} task={task} projects={projects} />}
               {taskEditorToShow === task.taskId && <TaskEditor taskId={task.taskId} task={task} projects={projects} isEdit />}
-            </div>
+            </React.Fragment>
           );
         })}
 

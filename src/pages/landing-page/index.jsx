@@ -39,8 +39,8 @@ export const LandingPage = () => {
               <Link className="intro__nav--item intro__nav--link" to="/signin">
                 Log in
               </Link>
-              <Link className="intro__nav--cta" to="/signup">
-                Start for free
+              <Link className="intro__nav--item intro__nav--link" to="/signup">
+                Sign up
               </Link>
             </div>
           </div>
@@ -56,7 +56,7 @@ export const LandingPage = () => {
             Become focused, organized, and calm with Todoist. The world’s #1 task manager and to-do list app.
           </h2>
           <Link to="/signin" className="intro__hero--cta">
-            Start for free
+                Start for free
           </Link>
         </div>
         <img src={illustration} className="intro__hero--illustration-1" alt="" width={1256} />

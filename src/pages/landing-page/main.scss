@@ -65,7 +65,7 @@
       }
 
       &:last-of-type {
-        padding-right: 0;
+       
       }
     }
     &--link:hover {
@@ -183,7 +183,7 @@
       width: 80%;
     }
     @include respond(phone) {
-      font-size: 44px;
+      font-size: 30px;
       width: 90%;
     }
   }
@@ -200,5 +200,9 @@
     max-inline-size: 480px;
     -webkit-margin-after: 24px;
     color: #1f1f1f;
+
+    @include respond(phone) {
+      font-size: 1rem;
+    }
   }
 }
