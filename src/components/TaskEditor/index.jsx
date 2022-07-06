@@ -1,6 +1,6 @@
 import featherIcon from "assets/svg/feather-sprite.svg";
 import { useThemeContextValue } from "context";
-import { useTaskEditorContextValue } from "context/board-add-task-context";
+import { useTaskEditorContextValue } from "context/board-task-editor-context";
 import { addDoc, collection, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { useAuth, useProjects, useSelectedProject } from "hooks";
 import moment from "moment";
@@ -10,7 +10,7 @@ import { generatePushId } from "utils";
 import { db } from "_firebase";
 import { SetNewTaskProject } from "./set-new-task-project";
 import { SetNewTaskSchedule } from "./set-new-task-schedule";
-import "./styles/add-task.scss";
+import "./styles/main.scss";
 import "./styles/light.scss";
 
 const taskEditorPlaceholders = [

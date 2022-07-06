@@ -4,13 +4,23 @@ import { ReactComponent as EditIcon } from "assets/svg/edit.svg";
 import featherIcon from "assets/svg/feather-sprite.svg";
 import { useOverlayContextValue, useTaskEditorContextValue } from "context";
 import { collection, deleteDoc, getDocs, query, setDoc, where } from "firebase/firestore";
-import { useAuth, useProjects, useSelectedProject } from "hooks";
-import { useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "hooks";
+import { useNavigate } from "react-router-dom";
 import { db } from "_firebase";
 import "./styles/light.scss";
 import "./styles/menu-list.scss";
 
-export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsProject, projectId, targetIsTask, taskIsImportant }) => {
+export const MenuList = ({
+  closeOverlay,
+  taskId,
+  xPosition,
+  yPosition,
+  targetIsProject,
+  projectId,
+  targetIsTask,
+  taskIsImportant,
+  targetIsBoardTask,
+}) => {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const { setTaskEditorToShow } = useTaskEditorContextValue();
@@ -78,15 +88,22 @@ export const MenuList = ({ closeOverlay, taskId, xPosition, yPosition, targetIsP
     }
   };
   const computeXPosition = () => {
-    const { innerWidth: width } = window;
+    let computedXPosition;
+    if (!targetIsBoardTask) {
+      const { innerWidth: width } = window;
 
-    let computedXPosition = xPosition - 100;
+      computedXPosition = xPosition - 100;
 
-    if (width < 1200 && width - xPosition < 100) {
-      computedXPosition = xPosition - 130;
-    } else if (width < 900 && width - xPosition > 100) {
-      computedXPosition = xPosition + 150;
+      if (width < 1200 && width - xPosition < 100) {
+        computedXPosition = xPosition - 130;
+      } else if (width < 900 && width - xPosition > 100) {
+        computedXPosition = xPosition + 150;
+      }
+    } else {
+      computedXPosition = xPosition;
+      console.log("BOARDDD", targetIsBoardTask);
     }
+
     return computedXPosition;
   };
 

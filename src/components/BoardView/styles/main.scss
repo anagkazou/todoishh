@@ -54,7 +54,7 @@
     }
     @include respond(phone) {
       & .menu__trigger {
-        opacity: 1;
+        display: none;
       }
     }
     &__info {

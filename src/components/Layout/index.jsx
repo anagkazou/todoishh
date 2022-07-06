@@ -3,7 +3,7 @@ import { LoadingPage } from "components/LoadingPage";
 import { Overlay } from "components/Overlay";
 import { Sidebar } from "components/Sidebar";
 import { useThemeContextValue } from "context";
-import { TaskEditorContextProvider } from "context/board-add-task-context";
+import { TaskEditorContextProvider } from "context/board-task-editor-context";
 import { useProjects } from "hooks";
 import { useCallback, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
